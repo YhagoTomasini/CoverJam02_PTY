@@ -1,10 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dme32dp4asol8"]
+[gd_scene load_steps=5 format=3 uid="uid://dme32dp4asol8"]
+
+[ext_resource type="PackedScene" uid="uid://biy5a2sgl1041" path="res://Prefabs/xp.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://br0ibc0cms7wf" path="res://Prefabs/Player.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="3_8gbba"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7u77a"]
 
 [node name="Main" type="Node2D"]
 
 [node name="BG" type="Sprite2D" parent="."]
-scale = Vector2(640, 480)
+modulate = Color(0.73265225, 0.925664, 0.53527564, 1)
+position = Vector2(-60, -63.999996)
+scale = Vector2(769.99994, 621)
 texture = SubResource("CanvasTexture_7u77a")
 centered = false
+
+[node name="Node2D" parent="." instance=ExtResource("1_bo1nx")]
+position = Vector2(544, 367)
+
+[node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+unique_name_in_owner = true
+position = Vector2(319, 211)
+
+[node name="Enemy" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(40, 36)
