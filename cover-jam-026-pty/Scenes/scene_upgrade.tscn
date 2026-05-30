@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://boy6cbo0ikvxb"]
+
+[ext_resource type="Script" uid="uid://c38bpnl1gm2r1" path="res://Scripts/scene_upgrade.gd" id="1_dvrfk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvrfk"]
+
+[node name="scene_upgrade" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dvrfk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 644.0
+offset_bottom = 478.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 95.0
+offset_right = 214.0
+offset_bottom = 410.0
+color = Color(0.08627451, 0.019607844, 0.38431373, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 95.0
+offset_right = 401.0
+offset_bottom = 410.0
+color = Color(0.08627451, 0.019607844, 0.38431373, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 95.0
+offset_right = 585.0
+offset_bottom = 410.0
+color = Color(0.08627451, 0.019607844, 0.38431373, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 116.0
+offset_right = 196.0
+offset_bottom = 290.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dvrfk")
+autowrap_mode = 2
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 116.0
+offset_right = 382.0
+offset_bottom = 290.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dvrfk")
+autowrap_mode = 2
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 115.0
+offset_right = 569.0
+offset_bottom = 289.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dvrfk")
+autowrap_mode = 2
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
