@@ -15,8 +15,10 @@ scale = Vector2(769.99994, 621)
 texture = SubResource("CanvasTexture_7u77a")
 centered = false
 
-[node name="Node2D" parent="." instance=ExtResource("1_bo1nx")]
+[node name="Xp" parent="." instance=ExtResource("1_bo1nx")]
 position = Vector2(544, 367)
+collision_layer = 4
+collision_mask = 4
 
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true

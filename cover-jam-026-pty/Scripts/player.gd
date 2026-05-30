@@ -6,10 +6,19 @@ var health = 100
 var level = 0
 var xp = 0
 
-func check_xp():
+var enemy_hit = false
+
+func Check_xp():
 	if xp >= Global.current_levelup:
 		Global.current_levelup = Global.current_levelup * 2.10
 		print("Level UP")
+		
+func Damage(damage_value: float):
+	if (health >= damage_value):
+		health -= damage_value
+	else:
+		Global.Deatch()
+	print("Voce tomou: ",damage_value," dano")
 
 func _physics_process(_delta: float) -> void:
 	# Movimentação do jogador
@@ -23,3 +32,8 @@ func _physics_process(_delta: float) -> void:
 		velocity.y = move_toward(velocity.y, 0, speed)
 
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Enemy":
+		Damage(body.damage)

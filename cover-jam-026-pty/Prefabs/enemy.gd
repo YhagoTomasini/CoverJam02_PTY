@@ -1,14 +1,15 @@
 extends CharacterBody2D
 
 var is_name = "Enemy"
-var speed = 200.0
+var speed = 100.0
 var health = 10
+var damage = 10
 
 @onready var player = %Player
 
 func _physics_process(_delta: float) -> void:
 	# Movimentação do jogador
-	print(position.direction_to(player.position))
+	# print(position.direction_to(player.position))
 	var direction_x := position.direction_to(player.position).x
 	var direction_y := position.direction_to(player.position).y
 	

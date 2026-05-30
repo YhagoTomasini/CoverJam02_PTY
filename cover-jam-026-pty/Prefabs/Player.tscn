@@ -1,13 +1,13 @@
-[gd_scene load_steps=26 format=3 uid="uid://br0ibc0cms7wf"]
+[gd_scene load_steps=27 format=3 uid="uid://br0ibc0cms7wf"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://mwsctqlv5kg" path="res://Scripts/player.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://bgnawl6dcsk4h" path="res://Assets/MC_Body_idle.png" id="2_vxq8l"]
 [ext_resource type="Texture2D" uid="uid://pn8mf6jx0q21" path="res://Assets/MC_Body_run.png" id="3_gg3t4"]
 [ext_resource type="Texture2D" uid="uid://blmxdan8c5jxa" path="res://Assets/MC_Head.png" id="4_javds"]
 [ext_resource type="Texture2D" uid="uid://c0bvips6gcq2o" path="res://Assets/MC_Head_run.png" id="5_3ygst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e80uo"]
-size = Vector2(127, 124)
+size = Vector2(32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lhekp"]
 atlas = ExtResource("2_vxq8l")
@@ -154,11 +154,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxq8l"]
+size = Vector2(34, 34)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_kpjcp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_e80uo")
 
 [node name="AnimatedCorpo" type="AnimatedSprite2D" parent="."]
@@ -173,3 +175,10 @@ frame = 1
 frame_progress = 0.5226041
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vxq8l")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
