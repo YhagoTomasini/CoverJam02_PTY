@@ -4,10 +4,13 @@ var is_name = "Enemy"
 var speed = 200.0
 var health = 10
 
+@onready var player = %Player
+
 func _physics_process(_delta: float) -> void:
 	# Movimentação do jogador
-	var direction_x := Input.get_axis("ui_left", "ui_right")
-	var direction_y := Input.get_axis("ui_up", "ui_down")
+	print(position.direction_to(player.position))
+	var direction_x := position.direction_to(player.position).x
+	var direction_y := position.direction_to(player.position).y
 	
 	if direction_x or direction_y:
 		velocity.x = direction_x * speed
