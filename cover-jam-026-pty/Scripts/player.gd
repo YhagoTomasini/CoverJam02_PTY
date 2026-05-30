@@ -6,8 +6,6 @@ var health = 100
 var level = 0
 var xp = 0
 
-var enemy_hit = false
-
 func Check_xp():
 	if xp >= Global.current_levelup:
 		Global.current_levelup = Global.current_levelup * 2.10
@@ -30,10 +28,10 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
-
 	move_and_slide()
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Enemy":
+	if body.is_name == "Enemy":
 		Damage(body.damage)
+	if body.is_name == "xp":
+		

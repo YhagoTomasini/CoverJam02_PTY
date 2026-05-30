@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dme32dp4asol8"]
+[gd_scene load_steps=6 format=3 uid="uid://dme32dp4asol8"]
 
 [ext_resource type="PackedScene" uid="uid://biy5a2sgl1041" path="res://Prefabs/xp.tscn" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://br0ibc0cms7wf" path="res://Prefabs/Player.tscn" id="1_jjgbg"]
@@ -6,14 +6,107 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7u77a"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
+
 [node name="Main" type="Node2D"]
 
-[node name="BG" type="Sprite2D" parent="."]
+[node name="Fundo" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="BG" type="Sprite2D" parent="Fundo"]
 modulate = Color(0.73265225, 0.925664, 0.53527564, 1)
-position = Vector2(-60, -63.999996)
-scale = Vector2(769.99994, 621)
+scale = Vector2(640, 480)
 texture = SubResource("CanvasTexture_7u77a")
 centered = false
+
+[node name="BG6" type="Sprite2D" parent="Fundo"]
+modulate = Color(0.73265225, 0.925664, 0.53527564, 1)
+position = Vector2(640, 480)
+scale = Vector2(640, 480)
+texture = SubResource("CanvasTexture_7u77a")
+centered = false
+
+[node name="BG7" type="Sprite2D" parent="Fundo"]
+modulate = Color(0.73265225, 0.925664, 0.53527564, 1)
+position = Vector2(640, -480)
+scale = Vector2(640, 480)
+texture = SubResource("CanvasTexture_7u77a")
+centered = false
+
+[node name="BG8" type="Sprite2D" parent="Fundo"]
+modulate = Color(0.73265225, 0.925664, 0.53527564, 1)
+position = Vector2(-640, -480)
+scale = Vector2(640, 480)
+texture = SubResource("CanvasTexture_7u77a")
+centered = false
+
+[node name="BG9" type="Sprite2D" parent="Fundo"]
+modulate = Color(0.73265225, 0.925664, 0.53527564, 1)
+position = Vector2(-640, 480)
+scale = Vector2(640, 480)
+texture = SubResource("CanvasTexture_7u77a")
+centered = false
+
+[node name="BG2" type="Sprite2D" parent="Fundo"]
+modulate = Color(0.4117647, 0.9254902, 0.53333336, 1)
+position = Vector2(640, 0)
+scale = Vector2(640, 480)
+texture = SubResource("CanvasTexture_7u77a")
+centered = false
+
+[node name="BG3" type="Sprite2D" parent="Fundo"]
+modulate = Color(0.4117647, 0.9254902, 0.53333336, 1)
+position = Vector2(-640, 0)
+scale = Vector2(640, 480)
+texture = SubResource("CanvasTexture_7u77a")
+centered = false
+
+[node name="BG4" type="Sprite2D" parent="Fundo"]
+modulate = Color(0.4117647, 0.9254902, 0.53333336, 1)
+position = Vector2(0, 480)
+scale = Vector2(640, 480)
+texture = SubResource("CanvasTexture_7u77a")
+centered = false
+
+[node name="BG5" type="Sprite2D" parent="Fundo"]
+modulate = Color(0.4117647, 0.9254902, 0.53333336, 1)
+position = Vector2(0, -480)
+scale = Vector2(640, 480)
+texture = SubResource("CanvasTexture_7u77a")
+centered = false
+
+[node name="BarreiraInvisivel" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BarreiraInvisivel"]
+position = Vector2(322.00003, 972)
+scale = Vector2(96.799995, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarreiraInvisivel/StaticBody2D"]
+shape = SubResource("RectangleShape2D_8gbba")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="BarreiraInvisivel"]
+position = Vector2(322.00003, -495)
+scale = Vector2(96.799995, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarreiraInvisivel/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_8gbba")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="BarreiraInvisivel"]
+position = Vector2(-650, 294)
+rotation = -1.5707964
+scale = Vector2(96.799995, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarreiraInvisivel/StaticBody2D3"]
+shape = SubResource("RectangleShape2D_8gbba")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="BarreiraInvisivel"]
+position = Vector2(1291, 294)
+rotation = -1.5707964
+scale = Vector2(96.799995, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarreiraInvisivel/StaticBody2D4"]
+shape = SubResource("RectangleShape2D_8gbba")
 
 [node name="Xp" parent="." instance=ExtResource("1_bo1nx")]
 position = Vector2(544, 367)
@@ -23,6 +116,8 @@ collision_mask = 4
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
 position = Vector2(319, 211)
+collision_layer = 1
+collision_mask = 1
 
 [node name="Enemy" parent="." instance=ExtResource("3_8gbba")]
 position = Vector2(40, 36)
