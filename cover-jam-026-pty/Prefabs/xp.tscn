@@ -1,19 +1,95 @@
-[gd_scene load_steps=4 format=3 uid="uid://biy5a2sgl1041"]
+[gd_scene load_steps=13 format=3 uid="uid://biy5a2sgl1041"]
 
 [ext_resource type="Script" uid="uid://coluhlxg1nctr" path="res://Scripts/xp.gd" id="1_kl4lw"]
-[ext_resource type="Texture2D" uid="uid://dxpm7p8nk0og2" path="res://Assets/pistol.png" id="2_w71b2"]
+[ext_resource type="Texture2D" uid="uid://cxqwq5s6q6mvs" path="res://Assets/XP_idle1-sheet.png" id="2_w71b2"]
+
+[sub_resource type="Curve" id="Curve_w71b2"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0.01895734, 1.1011237), 0.0, 0.0, 0, 0, Vector2(1, 1.8426967), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_pymbm"]
+colors = PackedColorArray(0, 0, 0, 0.8, 0.6799561, 0.078781016, 0.23198614, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pymbm"]
+atlas = ExtResource("2_w71b2")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7b52"]
+atlas = ExtResource("2_w71b2")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmhtx"]
+atlas = ExtResource("2_w71b2")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poqm0"]
+atlas = ExtResource("2_w71b2")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjdrx"]
+atlas = ExtResource("2_w71b2")
+region = Rect2(32, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snejw"]
+atlas = ExtResource("2_w71b2")
+region = Rect2(40, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6bj0d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pymbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7b52")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmhtx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poqm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjdrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snejw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pymbm"]
 size = Vector2(32, 32)
 
 [node name="Xp" type="Area2D"]
+scale = Vector2(3, 3)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_kl4lw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 1, 1)
-texture = ExtResource("2_w71b2")
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 12
+lifetime = 2.0
+speed_scale = 1.5
+randomness = 1.0
+emission_shape = 2
+emission_sphere_radius = 3.0
+spread = 180.0
+gravity = Vector2(0, 0)
+angle_max = 360.0
+scale_amount_min = 0.5
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_w71b2")
+color_initial_ramp = SubResource("Gradient_pymbm")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.6901961, 0.03137255, 0.16470589, 1)
+sprite_frames = SubResource("SpriteFrames_6bj0d")
+autoplay = "default"
+frame_progress = 0.825458
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pymbm")
