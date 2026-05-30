@@ -9,3 +9,6 @@ var Multiple_Health = 1.0
 var current_levelup = 10
 
 @onready var player = preload("res://Prefabs/Player.tscn")
+
+func Deatch():
+	print("Voce morreu")
