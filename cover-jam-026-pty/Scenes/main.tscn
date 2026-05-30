@@ -7,6 +7,7 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_7u77a"]
 
 [node name="Main" type="Node2D"]
+position = Vector2(0, 1)
 
 [node name="BG" type="Sprite2D" parent="."]
 modulate = Color(0.73265225, 0.925664, 0.53527564, 1)

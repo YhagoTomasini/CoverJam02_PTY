@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://btjs1kw6uvpn2"]
 
-[ext_resource type="Texture2D" uid="uid://cfpke015c26qd" path="res://icon.svg" id="1_7k104"]
 [ext_resource type="Script" uid="uid://djwlgr8uux1my" path="res://Prefabs/enemy.gd" id="1_lgw76"]
+[ext_resource type="Texture2D" uid="uid://dxpm7p8nk0og2" path="res://Assets/pistol.png" id="2_lgw76"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
-size = Vector2(128, 128)
+size = Vector2(32, 32)
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_lgw76")
@@ -14,4 +14,4 @@ shape = SubResource("RectangleShape2D_4gyqm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
-texture = ExtResource("1_7k104")
+texture = ExtResource("2_lgw76")
