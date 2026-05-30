@@ -15,3 +15,5 @@ shape = SubResource("RectangleShape2D_sunpe")
 modulate = Color(0, 1, 0, 1)
 scale = Vector2(2, 0.5)
 texture = ExtResource("1_60es3")
+
+[node name="Marker2D" type="Marker2D" parent="."]
