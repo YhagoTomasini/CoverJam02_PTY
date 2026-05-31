@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 @export var is_name = "Enemy"
 @export var speed = 100.0
-@export var health = 10
+@export var max_health = 10
+@export var health = max_health
 @export var damage = 10
+@export var animation : AnimatedSprite2D
 
 var player : CharacterBody2D
 
@@ -13,6 +15,12 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	var direction := position.direction_to(player.position)
 	velocity = direction * speed
+	
+	animation.play("Run")
+	if velocity.x > 0:
+		animation.flip_h = true
+	else:
+		animation.flip_h = false
 	# print(position.direction_to(player.position))
 	move_and_slide()
 

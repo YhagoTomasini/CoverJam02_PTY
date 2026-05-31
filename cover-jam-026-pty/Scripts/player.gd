@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 var is_name = "Player"
 @export var speed = 200.0 * Global.Multiple_Speed
-var health = 100 * Global.Multiple_Health
+@export var max_health = 10
+@export var health = max_health * Global.Multiple_Health
 var level = 0
 var xp = 0
 
@@ -20,7 +21,14 @@ func _ready() -> void:
 	timer.one_shot = true
 	timer.start()
 
-func Check_xp():
+func set_Health(health_value):
+	if health + health_value > max_health:
+		health = max_health
+	else:
+		health += health_value
+	print(health)
+	
+func check_xp():
 	if xp >= Global.current_levelup:
 		Global.current_levelup = Global.current_levelup * 2.10
 		print("Level UP")
