@@ -17,6 +17,7 @@ var level = 0
 @onready var timer_sword : Timer = $Timer_sword
 @onready var timer_fire : Timer = $Timer_fire
 @onready var timer_spawn : Timer = $PivotSpawn/Timer
+@onready var timer_wave : Timer = $"../Timer_wave"
 
 @export var anim_body : AnimatedSprite2D
 @export var anim_head : AnimatedSprite2D
@@ -55,6 +56,7 @@ func check_xp():
 		Global.xp = 0
 		if Global.lv_atual == 1:
 			timer_spawn.start()
+			timer_wave.start()
 			lv_up_arma.LeveUp()
 		elif Global.lv_atual == 5:
 			lv_up_arma.LeveUp()
@@ -122,3 +124,9 @@ func _on_timer_fire_timeout() -> void:
 	attack_instance.global_rotation = Pivot.global_rotation
 	get_parent().add_child(attack_instance)
 	timer_fire.start()
+
+
+func _on_timer_wave_timeout() -> void:
+	if (timer_spawn.wait_time >= 0.2):
+		timer_spawn.wait_time = timer_spawn.wait_time - 0.2
+	pass # Replace with function body.
