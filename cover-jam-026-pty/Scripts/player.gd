@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var is_name = "Player"
-@export var speed = 200.0 * Global.Multiple_Speed
+@export var speed = 150.0 * Global.Multiple_Speed
 @export var max_health = 10
 @export var health = max_health * Global.Multiple_Health
 var level = 0
@@ -91,6 +91,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Xp"):
 		print("XP")
 	if body.is_in_group("Enemy"):
+		body.slow()
 		Damage(body.damage)
 
 func _on_timer_timeout() -> void:

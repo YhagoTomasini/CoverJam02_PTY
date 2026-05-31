@@ -152,7 +152,7 @@ func _on_button_2_pressed() -> void:
 		CD:
 			Global.Multiple_CD += CD[2]
 		Size:
-			Global.Multiple_Size += Size[2]
+			Global.Multiple_size += Size[2]
 	visible = false
 	get_tree().paused = false
 
@@ -169,6 +169,6 @@ func _on_button_3_pressed() -> void:
 		CD:
 			Global.Multiple_CD += CD[2]
 		Size:
-			Global.Multiple_Size += Size[2]
+			Global.Multiple_size += Size[2]
 	visible = false
 	get_tree().paused = false

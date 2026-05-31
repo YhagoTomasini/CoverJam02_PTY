@@ -37,5 +37,10 @@ func receive_damage(damage_value: float):
 		call_deferred("add_sibling",xp_drop)
 		deatch()
 
+func slow():
+	speed -= speed/2
+	await get_tree().create_timer(0.8).timeout
+	speed += speed*2
+
 func deatch():
 	queue_free()

@@ -45,6 +45,7 @@ animations = [{
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("animation") groups=["Enemy"]]
 script = ExtResource("1_lgw76")
+speed = 80.0
 animation = NodePath("AnimatedSprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
