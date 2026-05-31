@@ -2,16 +2,18 @@ extends CharacterBody2D
 
 var is_name = "Player"
 @export var speed = 150.0 * Global.Multiple_Speed
-@export var max_health = 10
+@export var max_health = 100
 @export var health = max_health * Global.Multiple_Health
 var level = 0
 var xp = 0
 
 @onready var Pivot: Node2D = $PivotAttack
 @onready var attack_Postion: Node2D = $PivotAttack/MarkerAttack
-@export var attack_scene: PackedScene
+@export var attack_sword: PackedScene
+@export var attack_pistol: PackedScene
 
-@onready var timer : Timer = $Timer
+@onready var timer_sword : Timer = $Timer_sword
+@onready var timer_fire : Timer = $Timer_fire
 
 @export var anim_body : AnimatedSprite2D
 @export var anim_head : AnimatedSprite2D
@@ -22,9 +24,9 @@ var xp = 0
 
 
 func _ready() -> void:
-	timer.wait_time = 1
-	timer.one_shot = true
-	timer.start()
+	#timer_sword.start()
+	#imer_fire.start()
+	pass
 
 func set_Health(health_value):
 	if health + health_value > max_health:
@@ -53,8 +55,6 @@ func Damage(damage_value: float):
 		print("Voce tomou: ",damage_value," dano")
 	else:
 		main.gameover()
-
-		
 	
 func _physics_process(_delta: float) -> void:
 	# Movimentação do jogador
@@ -96,9 +96,16 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.slow()
 		Damage(body.damage)
 
-func _on_timer_timeout() -> void:
-	var attack_instance = attack_scene.instantiate()
+func _on_timer_sword_timeout() -> void:
+	var attack_instance = attack_sword.instantiate()
 	attack_instance.global_position = attack_Postion.global_position
 	attack_instance.global_rotation = Pivot.global_rotation
 	get_parent().add_child(attack_instance)
-	timer.start()
+	timer_sword.start()
+
+func _on_timer_fire_timeout() -> void:
+	var attack_instance = attack_pistol.instantiate()
+	attack_instance.global_position = attack_Postion.global_position
+	attack_instance.global_rotation = Pivot.global_rotation
+	get_parent().add_child(attack_instance)
+	timer_fire.start()

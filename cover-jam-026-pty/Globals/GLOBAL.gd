@@ -12,5 +12,6 @@ var current_levelup = 10
 var lv_atual = 0
 
 var enemys = []
+var armas_atual = []
 
 @onready var player = preload("res://Prefabs/Player.tscn")

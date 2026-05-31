@@ -1,14 +1,13 @@
-[gd_scene load_steps=32 format=3 uid="uid://br0ibc0cms7wf"]
+[gd_scene load_steps=31 format=3 uid="uid://br0ibc0cms7wf"]
 
 [ext_resource type="Script" uid="uid://mwsctqlv5kg" path="res://Scripts/player.gd" id="1_kpjcp"]
-[ext_resource type="PackedScene" uid="uid://dbgla2xv2oblv" path="res://Prefabs/pistol_fire.tscn" id="2_3ygst"]
 [ext_resource type="Texture2D" uid="uid://bgnawl6dcsk4h" path="res://Assets/MC_Body_idle.png" id="2_vxq8l"]
 [ext_resource type="Texture2D" uid="uid://pn8mf6jx0q21" path="res://Assets/MC_Body_run.png" id="3_gg3t4"]
 [ext_resource type="Texture2D" uid="uid://blmxdan8c5jxa" path="res://Assets/MC_Head.png" id="4_javds"]
 [ext_resource type="Texture2D" uid="uid://c0bvips6gcq2o" path="res://Assets/MC_Head_run.png" id="5_3ygst"]
 [ext_resource type="Script" uid="uid://b0ymqb8th35u2" path="res://Scripts/pivot_spawn.gd" id="7_javds"]
 [ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="8_3ygst"]
-[ext_resource type="Script" path="res://Prefabs/fire.gd" id="9_lhekp"]
+[ext_resource type="Script" uid="uid://dk5xcobr6150d" path="res://Prefabs/fire.gd" id="9_lhekp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e80uo"]
 size = Vector2(32, 32)
@@ -168,7 +167,6 @@ radius = 188.00266
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_kpjcp")
-attack_scene = ExtResource("2_3ygst")
 anim_body = NodePath("AnimatedCorpo")
 anim_head = NodePath("AnimatedCabeca")
 
@@ -220,7 +218,11 @@ position = Vector2(600, 0)
 
 [node name="Timer" type="Timer" parent="PivotSpawn"]
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer_sword" type="Timer" parent="."]
+wait_time = 1.2
+
+[node name="Timer_fire" type="Timer" parent="."]
+wait_time = 0.8
 
 [node name="Fire" type="Node2D" parent="."]
 script = ExtResource("9_lhekp")
@@ -235,7 +237,8 @@ autostart = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="PivotSpawn/Timer" to="PivotSpawn" method="_on_timer_timeout"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer_sword" to="." method="_on_timer_sword_timeout"]
+[connection signal="timeout" from="Timer_fire" to="." method="_on_timer_fire_timeout"]
 [connection signal="body_entered" from="Fire/Range_fire" to="Fire" method="_on_range_fire_body_entered"]
 [connection signal="body_exited" from="Fire/Range_fire" to="Fire" method="_on_range_fire_body_exited"]
 [connection signal="timeout" from="Fire/Timer" to="Fire" method="_on_timer_timeout"]

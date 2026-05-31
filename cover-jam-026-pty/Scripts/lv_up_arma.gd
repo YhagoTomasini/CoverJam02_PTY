@@ -135,6 +135,7 @@ func _on_button_pressed() -> void:
 		faca:
 			#adicionar funcao
 			arrayColetadas.append(faca)
+			Global.armas_atual.append(faca)
 		bazuka:
 			#adicionar funcao
 			arrayColetadas.append(bazuka)
