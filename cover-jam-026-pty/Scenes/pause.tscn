@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bxw6r1sye8gs"]
 
 [ext_resource type="Script" uid="uid://4otw2qtj2afd" path="res://Scripts/pause.gd" id="1_5a6ek"]
-[ext_resource type="Shader" uid="uid://bnpxslx2stemd" path="res://Temas/blur.gdshader" id="2_5a6ek"]
-[ext_resource type="Theme" uid="uid://c8ky7qr5b1nvq" path="res://Temas/botoes_tema.tres" id="3_5a6ek"]
+[ext_resource type="Shader" path="res://Temas/blur.gdshader" id="2_5a6ek"]
+[ext_resource type="Theme" path="res://Temas/botoes_tema.tres" id="3_5a6ek"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e0jm0"]
 shader = ExtResource("2_5a6ek")
@@ -54,10 +54,11 @@ grow_vertical = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Menu" type="Button" parent="VBoxContainer"]
+[node name="Voltar" type="Button" parent="VBoxContainer"]
+z_index = 10
 layout_mode = 2
 theme = ExtResource("3_5a6ek")
-text = "Menu"
+text = "Voltar"
 flat = true
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
@@ -74,13 +75,12 @@ flat = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Voltar" type="Button" parent="VBoxContainer"]
-z_index = 10
+[node name="Menu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_5a6ek")
-text = "Voltar"
+text = "Menu"
 flat = true
 
-[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="VBoxContainer/Resetar" to="." method="_on_resetar_pressed"]
 [connection signal="pressed" from="VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resetar" to="." method="_on_resetar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Menu" to="." method="_on_menu_pressed"]

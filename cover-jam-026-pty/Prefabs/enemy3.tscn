@@ -45,7 +45,7 @@ animations = [{
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("animation") groups=["Enemy"]]
 script = ExtResource("1_beskb")
 speed = 64.0
-health = 40
+health = 36
 damage = 10
 animation = NodePath("AnimatedSprite2D")
 

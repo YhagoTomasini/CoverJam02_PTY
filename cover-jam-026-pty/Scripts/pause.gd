@@ -34,11 +34,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _on_menu_pressed() -> void:
+	Global.resetGame()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 	Global.player_morreu = false
 
 func _on_resetar_pressed() -> void:
+	Global.resetGame()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 	Global.player_morreu = false

@@ -32,11 +32,11 @@ var Size_text = "TAMANHO"
 
 
 var speed = [speed_icon, speed_text,0.3]
-var health = [health_icon, health_text,0.2]
-var xp = [xp_icon, xp_text, 0.2]
-var dano = [dano_icon,dano_text, 0.2]
-var CD = [CD_icon, CD_text, 0.15]
-var Size = [Size_icon, Size_text, 0.2]
+var health = [health_icon, health_text,0.3]
+var xp = [xp_icon, xp_text, 0.3]
+var dano = [dano_icon,dano_text, 0.3]
+var CD = [CD_icon, CD_text, 0.3]
+var Size = [Size_icon, Size_text, 0.3]
 
 var arrayDeArmas =[speed,health,xp,dano,CD,Size] 
 
