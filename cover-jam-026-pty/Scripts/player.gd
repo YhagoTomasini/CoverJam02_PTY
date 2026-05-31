@@ -42,6 +42,12 @@ func set_Health(health_value):
 		health += health_value
 	print(health)
 	
+func equipar_arma(arma):
+	if arma == "pistola":
+		timer_fire.start()
+	if arma == "faca":
+		timer_sword.start()
+
 func check_xp():
 	if Global.xp >= Global.current_levelup:
 		Global.current_levelup = Global.current_levelup * 1.15

@@ -12,6 +12,8 @@ extends Control
 @export var text_2: Label
 @export var text_3: Label
 
+@onready var player = %Player
+
 var mapinguari_icon = preload("res://Assets/flozinha.png")
 var mapinguari_text = "mapinguari"
 
@@ -135,13 +137,14 @@ func _on_button_pressed() -> void:
 		faca:
 			#adicionar funcao
 			arrayColetadas.append(faca)
-			Global.armas_atual.append(faca)
+			player.equipar_arma("faca")
 		bazuka:
 			#adicionar funcao
 			arrayColetadas.append(bazuka)
 		pistola:
 			#adicionar funcao
 			arrayColetadas.append(pistola)
+			player.equipar_arma("pistola")
 		corpo:
 			#adicionar funcao
 			arrayColetadas.append(corpo)
@@ -160,12 +163,14 @@ func _on_button_2_pressed() -> void:
 		faca:
 			#adicionar funcao
 			arrayColetadas.append(faca)
+			player.equipar_arma("faca")
 		bazuka:
 			#adicionar funcao
 			arrayColetadas.append(bazuka)
 		pistola:
 			#adicionar funcao
 			arrayColetadas.append(pistola)
+			player.equipar_arma("pistola")
 		corpo:
 			#adicionar funcao
 			arrayColetadas.append(corpo)
@@ -184,12 +189,14 @@ func _on_button_3_pressed() -> void:
 		faca:
 			#adicionar funcao
 			arrayColetadas.append(faca)
+			player.equipar_arma("faca")
 		bazuka:
 			#adicionar funcao
 			arrayColetadas.append(bazuka)
 		pistola:
 			#adicionar funcao
 			arrayColetadas.append(pistola)
+			player.equipar_arma("pistola")
 		corpo:
 			#adicionar funcao
 			arrayColetadas.append(corpo)

@@ -1,13 +1,15 @@
-[gd_scene load_steps=31 format=3 uid="uid://br0ibc0cms7wf"]
+[gd_scene load_steps=33 format=3 uid="uid://br0ibc0cms7wf"]
 
 [ext_resource type="Script" uid="uid://mwsctqlv5kg" path="res://Scripts/player.gd" id="1_kpjcp"]
+[ext_resource type="PackedScene" uid="uid://qk5wtcg5ijhk" path="res://Prefabs/range.tscn" id="2_t8lmw"]
 [ext_resource type="Texture2D" uid="uid://bgnawl6dcsk4h" path="res://Assets/MC_Body_idle.png" id="2_vxq8l"]
 [ext_resource type="Texture2D" uid="uid://pn8mf6jx0q21" path="res://Assets/MC_Body_run.png" id="3_gg3t4"]
+[ext_resource type="PackedScene" uid="uid://dbgla2xv2oblv" path="res://Prefabs/pistol_fire.tscn" id="3_k2qb3"]
 [ext_resource type="Texture2D" uid="uid://blmxdan8c5jxa" path="res://Assets/MC_Head.png" id="4_javds"]
 [ext_resource type="Texture2D" uid="uid://c0bvips6gcq2o" path="res://Assets/MC_Head_run.png" id="5_3ygst"]
 [ext_resource type="Script" uid="uid://b0ymqb8th35u2" path="res://Scripts/pivot_spawn.gd" id="7_javds"]
 [ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="8_3ygst"]
-[ext_resource type="Script" path="res://Prefabs/fire.gd" id="9_lhekp"]
+[ext_resource type="Script" uid="uid://dk5xcobr6150d" path="res://Prefabs/fire.gd" id="9_lhekp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e80uo"]
 size = Vector2(32, 32)
@@ -167,6 +169,8 @@ radius = 188.00266
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_kpjcp")
+attack_sword = ExtResource("2_t8lmw")
+attack_pistol = ExtResource("3_k2qb3")
 anim_body = NodePath("AnimatedCorpo")
 anim_head = NodePath("AnimatedCabeca")
 
