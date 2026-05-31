@@ -4,6 +4,8 @@ var is_name = "Player"
 @export var speed = 150.0 * Global.Multiple_Speed
 @export var max_health = 100
 @export var health = max_health * Global.Multiple_Health
+
+
 var level = 0
 var xp = 0
 
@@ -22,6 +24,10 @@ var xp = 0
 @onready var lv_up_arma: Control = $"../CanvasLayer/lv_up_arma"
 @onready var lv_up_buff: Control = $"../CanvasLayer/lv_up_buff"
 @onready var main: Node2D = $".."
+@onready var health_bar: ProgressBar = $"../HUD/health_bar"
+
+
+
 
 
 func _ready() -> void:
@@ -61,7 +67,7 @@ func Damage(damage_value: float):
 func _physics_process(_delta: float) -> void:
 	# Movimentação do jogador
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	
+	health_bar.value = health
 	if direction:
 		velocity = direction * speed
 		Pivot.rotation = direction.angle()
