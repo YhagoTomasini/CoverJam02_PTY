@@ -119,5 +119,8 @@ position = Vector2(319, 211)
 collision_layer = 1
 collision_mask = 1
 
+[node name="Enemy2" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(274, -18)
+
 [node name="Enemy" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(40, 36)
+position = Vector2(137, -9)

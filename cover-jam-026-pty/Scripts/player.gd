@@ -1,12 +1,12 @@
 extends CharacterBody2D
 
 var is_name = "Player"
-var speed = 200.0
+@export var speed = 200.0
 var health = 100
 var level = 0
 var xp = 0
 
-var range = preload("res://range.tscn").instantiate()
+var range = preload("res://range.tscn")
 
 func Check_xp():
 	if xp >= Global.current_levelup:
@@ -34,8 +34,9 @@ func _physics_process(_delta: float) -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
-		add_child(range)
+		var range_init = range.instantiate()
+		add_child(range_init)
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_name == "Enemy":
+	if body.is_in_group("Enemy"):
 		Damage(body.damage)
