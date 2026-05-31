@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://unaxbaq7g2x"]
+[gd_scene load_steps=7 format=3 uid="uid://boy6cbo0ikvxb"]
 
 [ext_resource type="Script" uid="uid://n7j36usxhy6g" path="res://Scripts/lv_up_buffs.gd" id="1_mpapi"]
-[ext_resource type="Shader" uid="uid://bnpxslx2stemd" path="res://Temas/blur.gdshader" id="2_oygp4"]
+[ext_resource type="Shader" path="res://Temas/blur.gdshader" id="2_oygp4"]
 [ext_resource type="Texture2D" uid="uid://5ar438lwiubv" path="res://Assets/moldura_upgrades.png" id="3_ewgkc"]
 [ext_resource type="Texture2D" uid="uid://dxpm7p8nk0og2" path="res://Assets/pistol.png" id="4_ntg6w"]
 
@@ -11,7 +11,7 @@ shader_parameter/blur_amount = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ogu6j"]
 
-[node name="lv_up_buff" type="Control"]
+[node name="lv_up_buff" type="Control" node_paths=PackedStringArray("button", "button_2", "button_3", "icon_1", "icon_2", "icon_3", "text_1", "text_2", "text_3")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -20,6 +20,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mpapi")
+button = NodePath("HBoxContainer/Button")
+button_2 = NodePath("HBoxContainer/Button2")
+button_3 = NodePath("HBoxContainer/Button3")
+icon_1 = NodePath("HBoxContainer/Button/TextureRect")
+icon_2 = NodePath("HBoxContainer/Button2/TextureRect2")
+icon_3 = NodePath("HBoxContainer/Button3/TextureRect3")
+text_1 = NodePath("HBoxContainer/Button/Label")
+text_2 = NodePath("HBoxContainer/Button2/Label2")
+text_3 = NodePath("HBoxContainer/Button3/Label3")
 
 [node name="Blur" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ta6kk")

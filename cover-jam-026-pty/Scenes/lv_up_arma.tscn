@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1joqd00bd338"]
+[gd_scene load_steps=7 format=3 uid="uid://cv6t31kympwot"]
 
-[ext_resource type="Script" uid="uid://c38bpnl1gm2r1" path="res://Scripts/scene_upgrade.gd" id="1_2wkns"]
-[ext_resource type="Shader" uid="uid://bnpxslx2stemd" path="res://Temas/blur.gdshader" id="2_mtvx8"]
+[ext_resource type="Script" uid="uid://c38bpnl1gm2r1" path="res://Scripts/lv_up_arma.gd" id="1_2wkns"]
+[ext_resource type="Shader" path="res://Temas/blur.gdshader" id="2_mtvx8"]
 [ext_resource type="Texture2D" uid="uid://5ar438lwiubv" path="res://Assets/moldura_upgrades.png" id="2_wi4xj"]
 [ext_resource type="Texture2D" uid="uid://dxpm7p8nk0og2" path="res://Assets/pistol.png" id="4_rpob1"]
 

@@ -12,34 +12,34 @@ extends Control
 @export var text_2: Label
 @export var text_3: Label
 
-var mapinguari_icon = preload("res://Assets/flozinha.png")
-var mapinguari_text = "mapinguari"
+var speed_icon = preload("res://Assets/flozinha.png")
+var speed_text = "Speed"
 
-var mula_icon = preload("res://Assets/flozinha.png")
-var mula_text = "Mula sem cabeça"
+var health_icon = preload("res://Assets/flozinha.png")
+var health_text = "Health"
 
-var corpo_icon = preload("res://Assets/flozinha.png")
-var corpo_text = "Corpo seco"
+var xp_icon = preload("res://Assets/flozinha.png")
+var xp_text = "Xp"
 
-var pistola_icon = preload("res://Assets/pistol.png")
-var pistola_text = "Pistola"
+var dano_icon = preload("res://Assets/pistol.png")
+var dano_text = "Dano"
 	
-var bazuka_icon = preload("res://Assets/bazuka.png")
-var bazuka_text = "Bazuka"
+var CD_icon = preload("res://Assets/bazuka.png")
+var CD_text = "Cd"
 	
-var faca_icon = preload("res://Assets/faca.png")
-var faca_text = "Faca"
+var Size_icon = preload("res://Assets/faca.png")
+var Size_text = "Size"
 
 
-var mapinguari = [mapinguari_icon, mapinguari_text,0.25]
-var mula = [mula_icon, mula_text,0.05]
-var corpo = [corpo_icon, corpo_text, 0.15]
-var pistola = [pistola_icon,pistola_text, 0.1]
-var bazuka = [bazuka_icon, bazuka_text, 0.1]
-var faca = [faca_icon, faca_text, 0.1]
+var speed = [speed_icon, speed_text,0.25]
+var health = [health_icon, health_text,0.05]
+var xp = [xp_icon, xp_text, 0.15]
+var dano = [dano_icon,dano_text, 0.1]
+var CD = [CD_icon, CD_text, 0.1]
+var Size = [Size_icon, Size_text, 0.1]
 var test = [0,0,0]
 
-var arrayDeArmas =[faca,bazuka,pistola,corpo,mula,mapinguari] 
+var arrayDeArmas =[speed,health,xp,dano,CD,size] 
 var arrayColetadas =[test]
 
 var powerUp1 
@@ -66,127 +66,109 @@ func LeveUp():
 
 			
 	match powerUp1:
-		faca:
-			text_1.text = faca[1]
-			icon_1.texture = faca[0]
-		bazuka:
-			text_1.text = bazuka[1]
-			icon_1.texture = bazuka[0]
-		pistola:
-			text_1.text = pistola[1]
-			icon_1.texture = pistola[0]
-		corpo:
-			text_1.text = corpo[1]
-			icon_1.texture = corpo[0]
-		mula:
-			text_1.text = mula[1]
-			icon_1.texture = mula[0]
-		mapinguari:
-			text_1.text = mapinguari[1]
-			icon_1.texture = mapinguari[0]
+		speed:
+			text_1.text = speed[1]
+			icon_1.texture = speed[0]
+		health:
+			text_1.text = health[1]
+			icon_1.texture = health[0]
+		xp:
+			text_1.text = xp[1]
+			icon_1.texture = xp[0]
+		dano:
+			text_1.text = dano[1]
+			icon_1.texture = dano[0]
+		CD:
+			text_1.text = CD[1]
+			icon_1.texture = CD[0]
+		Size:
+			text_1.text = Size[1]
+			icon_1.texture = Size[0]
 	match powerUp2:
-		faca:
-			text_2.text = faca[1]
-			icon_2.texture = faca[0]
-		bazuka:
-			text_2.text = bazuka[1]
-			icon_2.texture = bazuka[0]
-		pistola:
-			text_2.text = pistola[1]
-			icon_2.texture = pistola[0]
-		corpo:
-			text_2.text = corpo[1]
-			icon_2.texture = corpo[0]
-		mula:
-			text_2.text = mula[1]
-			icon_2.texture = mula[0]
-		mapinguari:
-			text_2.text = mapinguari[1]
-			icon_2.texture = mapinguari[0]
+		speed:
+			text_2.text = speed[1]
+			icon_2.texture = speed[0]
+		health:
+			text_2.text = health[1]
+			icon_2.texture = health[0]
+		xp:
+			text_2.text = xp[1]
+			icon_2.texture = xp[0]
+		dano:
+			text_2.text = dano[1]
+			icon_2.texture = dano[0]
+		CD:
+			text_2.text = CD[1]
+			icon_2.texture = CD[0]
+		Size:
+			text_2.text = Size[1]
+			icon_2.texture = Size[0]
 	match powerUp3:
-		faca:
-			text_3.text = faca[1]
-			icon_3.texture = faca[0]
-		bazuka:
-			text_3.text = bazuka[1]
-			icon_3.texture = bazuka[0]
-		pistola:
-			text_3.text = pistola[1]
-			icon_3.texture = pistola[0]
-		corpo:
-			text_3.text = corpo[1]
-			icon_3.texture = corpo[0]
-		mula:
-			text_3.text = mula[1]
-			icon_3.texture = mula[0]
-		mapinguari:
-			text_3.text = mapinguari[1]
-			icon_3.texture = mapinguari[0]
+		speed:
+			text_3.text = speed[1]
+			icon_3.texture = speed[0]
+		health:
+			text_3.text = health[1]
+			icon_3.texture = health[0]
+		xp:
+			text_3.text = xp[1]
+			icon_3.texture = xp[0]
+		dano:
+			text_3.text = dano[1]
+			icon_3.texture = dano[0]
+		CD:
+			text_3.text = CD[1]
+			icon_3.texture = CD[0]
+		Size:
+			text_3.text = Size[1]
+			icon_3.texture = Size[0]
 
 func _on_button_pressed() -> void:
 	match powerUp1:
-		faca:
-			#adicionar funcao
-			arrayColetadas.append(faca)
-		bazuka:
-			#adicionar funcao
-			arrayColetadas.append(bazuka)
-		pistola:
-			#adicionar funcao
-			arrayColetadas.append(pistola)
-		corpo:
-			#adicionar funcao
-			arrayColetadas.append(corpo)
-		mula:
-			#adicionar funcao
-			arrayColetadas.append(mula)
-		mapinguari:
-			#adicionar funcao
-			arrayColetadas.append(mapinguari)
+		speed:
+			Global.Multiple_Speed += speed[2]
+		health:
+			Global.Multiple_Health += health[2]
+		xp:
+			Global.Multiple_xp += xp[2]
+		dano:
+			Global.Multiple_Damage += dano[2]
+		CD:
+			Global.Multiple_CD += CD[2]
+		Size:
+			Global.Multiple_Size += Size[2]
 	visible = false
 
 
 func _on_button_2_pressed() -> void:
 	match powerUp2:
-		faca:
-			#adicionar funcao
-			arrayColetadas.append(faca)
-		bazuka:
-			#adicionar funcao
-			arrayColetadas.append(bazuka)
-		pistola:
-			#adicionar funcao
-			arrayColetadas.append(pistola)
-		corpo:
-			#adicionar funcao
-			arrayColetadas.append(corpo)
-		mula:
-			#adicionar funcao
-			arrayColetadas.append(mula)
-		mapinguari:
-			#adicionar funcao
-			arrayColetadas.append(mapinguari)
+		speed:
+			Global.Multiple_Speed += speed[2]
+		health:
+			Global.Multiple_Health += health[2]
+		xp:
+			Global.Multiple_xp += xp[2]
+		dano:
+			Global.Multiple_Damage += dano[2]
+		CD:
+			Global.Multiple_CD += CD[2]
+		Size:
+			Global.Multiple_Size += Size[2]
 	visible = false
 
 
 func _on_button_3_pressed() -> void:
 	match powerUp3:
-		faca:
-			#adicionar funcao
-			arrayColetadas.append(faca)
-		bazuka:
-			#adicionar funcao
-			arrayColetadas.append(bazuka)
-		pistola:
-			#adicionar funcao
-			arrayColetadas.append(pistola)
-		corpo:
-			#adicionar funcao
-			arrayColetadas.append(corpo)
-		mula:
-			#adicionar funcao
-			arrayColetadas.append(mula)
-		mapinguari:
-			#adicionar funcao
-			arrayColetadas.append(mapinguari)
+		speed:
+			Global.Multiple_Speed += speed[2]
+		health:
+			Global.Multiple_Health += health[2]
+		xp:
+			Global.Multiple_xp += xp[2]
+		dano:
+			Global.Multiple_Damage += dano[2]
+		CD:
+			Global.Multiple_CD += CD[2]
+		Size:
+			Global.Multiple_Size += Size[2]
 	visible = false
