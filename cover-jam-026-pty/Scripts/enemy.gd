@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 @export var is_name = "Enemy"
-@export var speed = 100.0
-@export var max_health = 10
+@export var speed = 0.0
+@export var max_health = 0.0
 @export var health = max_health
-@export var damage = 10
+@export var damage = 00
 @export var animation : AnimatedSprite2D
 
 const XP = preload("res://Prefabs/xp.tscn")
