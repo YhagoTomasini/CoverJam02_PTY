@@ -14,6 +14,7 @@ var xp = 0
 
 @onready var timer_sword : Timer = $Timer_sword
 @onready var timer_fire : Timer = $Timer_fire
+@onready var timer_spawn : Timer = $PivotSpawn/Timer
 
 @export var anim_body : AnimatedSprite2D
 @export var anim_head : AnimatedSprite2D
@@ -40,6 +41,7 @@ func check_xp():
 		Global.current_levelup = Global.current_levelup * 1.7
 		Global.lv_atual += 1
 		if Global.lv_atual == 1:
+			timer_spawn.start()
 			lv_up_arma.LeveUp()
 		elif Global.lv_atual == 5:
 			lv_up_arma.LeveUp()
