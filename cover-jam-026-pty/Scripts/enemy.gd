@@ -34,7 +34,7 @@ func receive_damage(damage_value: float):
 	else:
 		var xp_drop = XP.instantiate()
 		xp_drop.global_position = global_position
-		add_sibling(xp_drop)
+		call_deferred("add_sibling",xp_drop)
 		deatch()
 
 func deatch():
