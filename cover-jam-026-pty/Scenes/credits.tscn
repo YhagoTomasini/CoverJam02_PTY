@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqwau6ccxmc0l"]
+[gd_scene load_steps=4 format=3 uid="uid://cqwau6ccxmc0l"]
 
 [ext_resource type="Script" uid="uid://eqfkm0t1renj" path="res://Scripts/credits.gd" id="1_r18jl"]
 [ext_resource type="PackedScene" uid="uid://bxw6r1sye8gs" path="res://Scenes/pause.tscn" id="2_gryuy"]
+[ext_resource type="FontFile" uid="uid://ca3v04roj2t0f" path="res://Temas/Starborn.ttf" id="3_xelri"]
 
 [node name="Credits" type="Control" node_paths=PackedStringArray("scroll", "text", "pause")]
 layout_mode = 3
@@ -30,12 +31,14 @@ vertical_scroll_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/margin_top = 720
+theme_override_constants/margin_top = 360
 theme_override_constants/margin_bottom = 720
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/MarginContainer"]
 layout_mode = 2
-text = "[b]PAPELITO[/b]
+theme_override_fonts/bold_font = ExtResource("3_xelri")
+bbcode_enabled = true
+text = "[b]Túpa[/b]
 
 [b]Por:[/b]
 Artêmio Neto, Lucas de Paulo Bernardo e Yhago Tomasini
@@ -78,7 +81,7 @@ Poder da amizade
 Mais dor
 _______________________________________
 
-Livre de de conteúdos gerados por Inteligência Artificial
+Sem uso de Inteligência Artificial
 _______________________________________
 
 Ano de lançamento 2026 – Todos direitos reservados. :P

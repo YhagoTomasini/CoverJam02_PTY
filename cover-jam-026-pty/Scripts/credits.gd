@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 			acelerando = false
 		velo = 1.0
 		
-	if scroll.scroll_vertical <= text.size.y + 100:
+	if scroll.scroll_vertical <= text.size.y + 300:
 		scroll.scroll_vertical += velo
 	
 	else:
