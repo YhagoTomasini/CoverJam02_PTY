@@ -112,11 +112,6 @@ scale = Vector2(96.799995, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BarreiraInvisivel/StaticBody2D4"]
 shape = SubResource("RectangleShape2D_8gbba")
 
-[node name="Xp" parent="." instance=ExtResource("1_bo1nx")]
-position = Vector2(544, 367)
-collision_layer = 4
-collision_mask = 4
-
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 unique_name_in_owner = true
 position = Vector2(319, 211)
@@ -134,3 +129,5 @@ position = Vector2(137, -9)
 layer = 5
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource("4_jjvhh")]
+
+[node name="Xp" parent="." groups=["Xp"] instance=ExtResource("1_bo1nx")]

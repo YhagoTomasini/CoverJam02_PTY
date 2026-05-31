@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://br0ibc0cms7wf"]
+[gd_scene load_steps=30 format=3 uid="uid://br0ibc0cms7wf"]
 
 [ext_resource type="Script" uid="uid://mwsctqlv5kg" path="res://Scripts/player.gd" id="1_kpjcp"]
 [ext_resource type="PackedScene" uid="uid://qk5wtcg5ijhk" path="res://Prefabs/range.tscn" id="2_gg3t4"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://pn8mf6jx0q21" path="res://Assets/MC_Body_run.png" id="3_gg3t4"]
 [ext_resource type="Texture2D" uid="uid://blmxdan8c5jxa" path="res://Assets/MC_Head.png" id="4_javds"]
 [ext_resource type="Texture2D" uid="uid://c0bvips6gcq2o" path="res://Assets/MC_Head_run.png" id="5_3ygst"]
+[ext_resource type="Script" uid="uid://b0ymqb8th35u2" path="res://Prefabs/pivot_spawn.gd" id="7_javds"]
+[ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="8_3ygst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e80uo"]
 size = Vector2(32, 32)
@@ -181,17 +183,29 @@ frame_progress = 0.25737447
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Xp"]]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_vxq8l")
 
-[node name="Pivot" type="Node2D" parent="."]
+[node name="PivotAttack" type="Node2D" parent="."]
 
-[node name="Marker2D" type="Marker2D" parent="Pivot"]
+[node name="MarkerAttack" type="Marker2D" parent="PivotAttack"]
 position = Vector2(40, 0)
+
+[node name="PivotSpawn" type="Node2D" parent="."]
+rotation = 0.2443461
+script = ExtResource("7_javds")
+enemy = ExtResource("8_3ygst")
+
+[node name="MarkerSpawn" type="Marker2D" parent="PivotSpawn"]
+position = Vector2(600, 0)
+
+[node name="Timer" type="Timer" parent="PivotSpawn"]
 
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="PivotSpawn/Timer" to="PivotSpawn" method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
