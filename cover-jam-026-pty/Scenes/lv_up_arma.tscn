@@ -1,12 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cv6t31kympwot"]
+[gd_scene load_steps=7 format=3 uid="uid://c1joqd00bd338"]
 
 [ext_resource type="Script" uid="uid://c38bpnl1gm2r1" path="res://Scripts/scene_upgrade.gd" id="1_2wkns"]
+[ext_resource type="Shader" uid="uid://bnpxslx2stemd" path="res://Temas/blur.gdshader" id="2_mtvx8"]
+[ext_resource type="Texture2D" uid="uid://5ar438lwiubv" path="res://Assets/moldura_upgrades.png" id="2_wi4xj"]
+[ext_resource type="Texture2D" uid="uid://dxpm7p8nk0og2" path="res://Assets/pistol.png" id="4_rpob1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rpob1"]
+shader = ExtResource("2_mtvx8")
+shader_parameter/blur_amount = 8.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dvrfk"]
 
-[node name="lv_up_arma" type="Control"]
+[node name="lv_up_arma" type="Control" node_paths=PackedStringArray("button", "button_2", "button_3", "icon_1", "icon_2", "icon_3", "text_1", "text_2", "text_3")]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,70 +20,162 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2wkns")
+button = NodePath("HBoxContainer/Button")
+button_2 = NodePath("HBoxContainer/Button2")
+button_3 = NodePath("HBoxContainer/Button3")
+icon_1 = NodePath("HBoxContainer/Button/TextureRect")
+icon_2 = NodePath("HBoxContainer/Button2/TextureRect2")
+icon_3 = NodePath("HBoxContainer/Button3/TextureRect3")
+text_1 = NodePath("HBoxContainer/Button/Label")
+text_2 = NodePath("HBoxContainer/Button2/Label2")
+text_3 = NodePath("HBoxContainer/Button3/Label3")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 644.0
-offset_bottom = 478.0
-color = Color(0, 0, 0, 1)
+[node name="Blur" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_rpob1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="ColorRect2" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 51.0
-offset_top = 95.0
-offset_right = 214.0
-offset_bottom = 410.0
-color = Color(0.08627451, 0.019607844, 0.38431373, 1)
+[node name="CorFundo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.47, 0.10810001, 0.16841678, 0.4627451)
 
-[node name="ColorRect3" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 238.0
-offset_top = 95.0
-offset_right = 401.0
-offset_bottom = 410.0
-color = Color(0.08627451, 0.019607844, 0.38431373, 1)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -160.0
+offset_right = 252.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="ColorRect4" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 422.0
-offset_top = 95.0
-offset_right = 585.0
-offset_bottom = 410.0
-color = Color(0.08627451, 0.019607844, 0.38431373, 1)
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 116.0
-offset_right = 196.0
-offset_bottom = 290.0
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dvrfk")
+icon = ExtResource("2_wi4xj")
 autowrap_mode = 2
 icon_alignment = 1
 vertical_icon_alignment = 0
 
-[node name="Button2" type="Button" parent="."]
-layout_mode = 0
-offset_left = 254.0
-offset_top = 116.0
-offset_right = 382.0
-offset_bottom = 290.0
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 120.0
+offset_right = 20.0
+offset_bottom = 160.0
+grow_horizontal = 2
+texture = ExtResource("4_rpob1")
+
+[node name="Label" type="Label" parent="HBoxContainer/Button"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -92.0
+offset_right = 20.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "..."
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxEmpty_dvrfk")
+icon = ExtResource("2_wi4xj")
 autowrap_mode = 2
 icon_alignment = 1
 vertical_icon_alignment = 0
 
-[node name="Button3" type="Button" parent="."]
-layout_mode = 0
-offset_left = 441.0
-offset_top = 115.0
-offset_right = 569.0
-offset_bottom = 289.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_dvrfk")
-autowrap_mode = 2
-icon_alignment = 1
-vertical_icon_alignment = 0
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 120.0
+offset_right = 20.0
+offset_bottom = 160.0
+grow_horizontal = 2
+texture = ExtResource("4_rpob1")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[node name="Label2" type="Label" parent="HBoxContainer/Button2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -92.0
+offset_right = 20.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "..."
+horizontal_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dvrfk")
+icon = ExtResource("2_wi4xj")
+autowrap_trim_flags = 0
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 120.0
+offset_right = 20.0
+offset_bottom = 160.0
+grow_horizontal = 2
+texture = ExtResource("4_rpob1")
+
+[node name="Label3" type="Label" parent="HBoxContainer/Button3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -83.0
+offset_right = 20.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+text = ".."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_button_3_pressed"]

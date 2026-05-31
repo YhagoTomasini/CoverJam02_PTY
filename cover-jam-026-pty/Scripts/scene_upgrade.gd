@@ -1,143 +1,149 @@
 extends Control
 
-@onready var button: Button = $Button
-@onready var button_2: Button = $Button2
-@onready var button_3: Button = $Button3
+@export var button: Button
+@export var button_2: Button
+@export var button_3: Button
 
+@export var icon_1: TextureRect
+@export var icon_2: TextureRect
+@export var icon_3: TextureRect
 
-var macunaima_icon = preload("uid://cfpke015c26qd")
-var macunaima_text = "Macunaima"
+@export var text_1: Label
+@export var text_2: Label
+@export var text_3: Label
 
-var mula_icon = preload("uid://cfpke015c26qd")
+var mapinguari_icon = preload("res://Assets/flozinha.png")
+var mapinguari_text = "mapinguari"
+
+var mula_icon = preload("res://Assets/flozinha.png")
 var mula_text = "Mula sem cabeça"
 
-var corpo_icon = preload("uid://cfpke015c26qd")
+var corpo_icon = preload("res://Assets/flozinha.png")
 var corpo_text = "Corpo seco"
 
-var pistola_icon = preload("uid://cfpke015c26qd")
+var pistola_icon = preload("res://Assets/pistol.png")
 var pistola_text = "Pistola"
 	
-var bazuka_icon = preload("uid://cfpke015c26qd")
+var bazuka_icon = preload("res://Assets/bazuka.png")
 var bazuka_text = "Bazuka"
 	
-var faca_icon = preload("uid://cfpke015c26qd")
+var faca_icon = preload("res://Assets/faca.png")
 var faca_text = "Faca"
 
 
-var macunaima = [macunaima_icon, macunaima_text,0.25]
+var mapinguari = [mapinguari_icon, mapinguari_text,0.25]
 var mula = [mula_icon, mula_text,0.05]
 var corpo = [corpo_icon, corpo_text, 0.15]
 var pistola = [pistola_icon,pistola_text, 0.1]
 var bazuka = [bazuka_icon, bazuka_text, 0.1]
 var faca = [faca_icon, faca_text, 0.1]
+var test = [0,0,0]
 
-var arrayDeArmas =[faca,bazuka,pistola,corpo,mula,macunaima] 
+var arrayDeArmas =[faca,bazuka,pistola,corpo,mula,mapinguari] 
+var arrayColetadas =[test]
 
 var powerUp1 
 var powerUp2
 var powerUp3
 
-var faca_ativa = false
-var bazuka_ativa = false
-var pistola_ativa = false
-var corpo_ativa = false
-var mula_ativa = false
-var macunaima_ativa = false
 
+func _ready() -> void:
+	button.grab_focus()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_page_down"):
 		visible = false
 	if Input.is_action_just_pressed("ui_page_up"):
-		visible = true
 		LeveUp()
 		
 		
 func LeveUp():
 	visible = true
+	
 	powerUp1 = arrayDeArmas.pick_random()
 	powerUp2 = arrayDeArmas.pick_random()
 	powerUp3 = arrayDeArmas.pick_random()
-	if faca_ativa or bazuka_ativa or pistola_ativa or corpo_ativa or mula_ativa or macunaima_ativa:
-		powerUp1 = arrayDeArmas.pick_random()
-	if faca_ativa or bazuka_ativa or pistola_ativa or corpo_ativa or mula_ativa or macunaima_ativa:
-		powerUp2 = arrayDeArmas.pick_random()
-	if faca_ativa or bazuka_ativa or pistola_ativa or corpo_ativa or mula_ativa or macunaima_ativa:
-		powerUp3 = arrayDeArmas.pick_random()
-
+	
+	for i in arrayColetadas:
+		while powerUp1 == i:
+			powerUp1 = arrayDeArmas.pick_random()
+		while powerUp2 == i:
+			powerUp2 = arrayDeArmas.pick_random()
+		while powerUp3 == i:
+			powerUp3 = arrayDeArmas.pick_random()
+			
 	match powerUp1:
 		faca:
-			button.text = faca[1]
-			button.icon = faca[0]
+			text_1.text = faca[1]
+			icon_1.texture = faca[0]
 		bazuka:
-			button.text = bazuka[1]
-			button.icon = bazuka[0]
+			text_1.text = bazuka[1]
+			icon_1.texture = bazuka[0]
 		pistola:
-			button.text = pistola[1]
-			button.icon = pistola[0]
+			text_1.text = pistola[1]
+			icon_1.texture = pistola[0]
 		corpo:
-			button.text = corpo[1]
-			button.icon = corpo[0]
+			text_1.text = corpo[1]
+			icon_1.texture = corpo[0]
 		mula:
-			button.text = mula[1]
-			button.icon = mula[0]
-		macunaima:
-			button.text = macunaima[1]
-			button.icon = macunaima[0]
+			text_1.text = mula[1]
+			icon_1.texture = mula[0]
+		mapinguari:
+			text_1.text = mapinguari[1]
+			icon_1.texture = mapinguari[0]
 	match powerUp2:
 		faca:
-			button_2.text = faca[1]
-			button_2.icon = faca[0]
+			text_2.text = faca[1]
+			icon_2.texture = faca[0]
 		bazuka:
-			button_2.text = bazuka[1]
-			button_2.icon = bazuka[0]
+			text_2.text = bazuka[1]
+			icon_2.texture = bazuka[0]
 		pistola:
-			button_2.text = pistola[1]
-			button_2.icon = pistola[0]
+			text_2.text = pistola[1]
+			icon_2.texture = pistola[0]
 		corpo:
-			button_2.text = corpo[1]
-			button_2.icon = corpo[0]
+			text_2.text = corpo[1]
+			icon_2.texture = corpo[0]
 		mula:
-			button_2.text = mula[1]
-			button_2.icon = mula[0]
-		macunaima:
-			button_2.text = macunaima[1]
-			button_2.icon = macunaima[0]
+			text_2.text = mula[1]
+			icon_2.texture = mula[0]
+		mapinguari:
+			text_2.text = mapinguari[1]
+			icon_2.texture = mapinguari[0]
 	match powerUp3:
 		faca:
-			button_3.text = faca[1]
-			button_3.icon = faca[0]
+			text_3.text = faca[1]
+			icon_3.texture = faca[0]
 		bazuka:
-			button_3.text = bazuka[1]
-			button_3.icon = bazuka[0]
+			text_3.text = bazuka[1]
+			icon_3.texture = bazuka[0]
 		pistola:
-			button_3.text = pistola[1]
-			button_3.icon = pistola[0]
+			text_3.text = pistola[1]
+			icon_3.texture = pistola[0]
 		corpo:
-			button_3.text = corpo[1]
-			button_3.icon = corpo[0]
+			text_3.text = corpo[1]
+			icon_3.texture = corpo[0]
 		mula:
-			button_3.text = mula[1]
-			button_3.icon = mula[0]
-		macunaima:
-			button_3.text = macunaima[1]
-			button_3.icon = macunaima[0]
+			text_3.text = mula[1]
+			icon_3.texture = mula[0]
+		mapinguari:
+			text_3.text = mapinguari[1]
+			icon_3.texture = mapinguari[0]
 
 func _on_button_pressed() -> void:
 	match powerUp1:
 		faca:
-			faca_ativa = true
-			print(faca)
+			arrayColetadas.append(faca)
 		bazuka:
-			pass
+			arrayColetadas.append(bazuka)
 		pistola:
-			pass
+			arrayColetadas.append(pistola)
 		corpo:
-			pass
+			arrayColetadas.append(corpo)
 		mula:
-			pass
-		macunaima:
-			pass
+			arrayColetadas.append(mula)
+		mapinguari:
+			arrayColetadas.append(mapinguari)
 	visible = false
 
 
@@ -153,7 +159,7 @@ func _on_button_2_pressed() -> void:
 			pass
 		mula:
 			pass
-		macunaima:
+		mapinguari:
 			pass
 	visible = false
 
@@ -170,6 +176,6 @@ func _on_button_3_pressed() -> void:
 			pass
 		mula:
 			pass
-		macunaima:
+		mapinguari:
 			pass
 	visible = false
