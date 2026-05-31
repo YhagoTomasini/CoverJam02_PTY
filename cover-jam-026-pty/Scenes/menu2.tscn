@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://camf5qoe0ayfx"]
+[gd_scene load_steps=4 format=3 uid="uid://dnsbid0yik3g6"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_1rerr"]
-[ext_resource type="Texture2D" uid="uid://bcs108psw8plx" path="res://Assets/Capa_coverJam.png" id="2_cayip"]
-[ext_resource type="Theme" uid="uid://c8ky7qr5b1nvq" path="res://Temas/botoes_tema.tres" id="3_158mb"]
-[ext_resource type="FontFile" uid="uid://ca3v04roj2t0f" path="res://Temas/Starborn.ttf" id="3_wwsa2"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_vimmb"]
+[ext_resource type="Texture2D" uid="uid://bcs108psw8plx" path="res://Assets/Capa_coverJam.png" id="2_h4lv7"]
+[ext_resource type="Theme" uid="uid://c8ky7qr5b1nvq" path="res://Temas/botoes_tema.tres" id="3_r02eq"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -12,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1rerr")
+script = ExtResource("1_vimmb")
 
 [node name="ColorRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -21,7 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_cayip")
+texture = ExtResource("2_h4lv7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -31,7 +30,18 @@ offset_bottom = 40.0
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/separation = 32
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="VSeparator3" type="VSeparator" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="VSeparator4" type="VSeparator" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -39,25 +49,22 @@ layout_mode = 2
 [node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/separation = 32
-
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.64705884, 0.4509804, 0.22745098, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 16
-theme_override_fonts/font = ExtResource("3_wwsa2")
-theme_override_font_sizes/font_size = 64
-text = "tupa"
 
 [node name="HSeparator3" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_constants/separation = 16
+
+[node name="HSeparator4" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="HSeparator5" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_158mb")
+theme = ExtResource("3_r02eq")
 text = "Play"
 flat = true
 
@@ -67,7 +74,7 @@ layout_mode = 2
 
 [node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("3_158mb")
+theme = ExtResource("3_r02eq")
 text = "Credits"
 flat = true
 

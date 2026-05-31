@@ -41,7 +41,7 @@ var bazuka = [bazuka_icon, bazuka_text, 0.1]
 var faca = [faca_icon, faca_text, 0.1]
 var test = [0,0,0]
 
-var arrayDeArmas =[faca,pistola] 
+var arrayDeArmas =[faca,bazuka,pistola] 
 var arrayColetadas =[test]
 
 var powerUp1 
