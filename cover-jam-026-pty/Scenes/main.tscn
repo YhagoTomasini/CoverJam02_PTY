@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dme32dp4asol8"]
+[gd_scene load_steps=13 format=4 uid="uid://dme32dp4asol8"]
 
 [ext_resource type="PackedScene" uid="uid://br0ibc0cms7wf" path="res://Prefabs/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b8ug20pd7be00" path="res://Scripts/main.gd" id="1_ynf5e"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bxw6r1sye8gs" path="res://Scenes/pause.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://boy6cbo0ikvxb" path="res://Scenes/lv_up_buff.tscn" id="5_344ge"]
 [ext_resource type="PackedScene" uid="uid://cvn3rdjlp7fhi" path="res://Prefabs/flower.tscn" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://waindd3syvaq" path="res://Scenes/morte.tscn" id="6_344ge"]
+[ext_resource type="PackedScene" uid="uid://dnmc6a0i8p3e7" path="res://Scenes/morte.tscn" id="6_344ge"]
+[ext_resource type="PackedScene" uid="uid://dascp6gsufkdq" path="res://Prefabs/health_bar.tscn" id="10_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://d38kcgchyhpe" path="res://Assets/bg1.png" id="10_hptm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hptm8"]
@@ -143,5 +144,13 @@ position = Vector2(772, 402)
 
 [node name="Flower70" parent="flores_iniciais" instance=ExtResource("5_kry3j")]
 position = Vector2(668, 270)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="health_bar" parent="HUD" instance=ExtResource("10_d1ilt")]
+offset_left = 44.0
+offset_top = 32.0
+offset_right = 144.0
+offset_bottom = 37.0
 
 [connection signal="timeout" from="spawner_de_flor" to="." method="_on_spawner_de_flor_timeout"]
