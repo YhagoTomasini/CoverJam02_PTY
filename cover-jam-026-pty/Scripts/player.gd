@@ -18,6 +18,7 @@ var xp = 0
 
 @onready var lv_up_arma: Control = $"../CanvasLayer/lv_up_arma"
 @onready var lv_up_buff: Control = $"../CanvasLayer/lv_up_buff"
+@onready var main: Node2D = $".."
 
 
 func _ready() -> void:
@@ -51,7 +52,8 @@ func Damage(damage_value: float):
 		health -= damage_value
 		print("Voce tomou: ",damage_value," dano")
 	else:
-		Global.deatch()
+		main.gameover()
+
 		
 	
 func _physics_process(_delta: float) -> void:

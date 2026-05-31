@@ -1,12 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dme32dp4asol8"]
+[gd_scene load_steps=13 format=3 uid="uid://dme32dp4asol8"]
 
 [ext_resource type="PackedScene" uid="uid://biy5a2sgl1041" path="res://Prefabs/xp.tscn" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://br0ibc0cms7wf" path="res://Prefabs/Player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://b8ug20pd7be00" path="res://Scripts/main.gd" id="1_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://cv6t31kympwot" path="res://Scenes/lv_up_arma.tscn" id="4_6bp64"]
 [ext_resource type="PackedScene" uid="uid://bxw6r1sye8gs" path="res://Scenes/pause.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://boy6cbo0ikvxb" path="res://Scenes/lv_up_buff.tscn" id="5_344ge"]
 [ext_resource type="PackedScene" uid="uid://cvn3rdjlp7fhi" path="res://Prefabs/flower.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://dnmc6a0i8p3e7" path="res://Scenes/morte.tscn" id="6_344ge"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7u77a"]
 
@@ -16,6 +18,7 @@
 metadata/__load_path__ = "res://range.tscn"
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_ynf5e")
 
 [node name="Fundo" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -133,6 +136,9 @@ layer = 5
 [node name="lv_up_arma" parent="CanvasLayer" instance=ExtResource("4_6bp64")]
 
 [node name="lv_up_buff" parent="CanvasLayer" instance=ExtResource("5_344ge")]
+
+[node name="Morte" parent="CanvasLayer" instance=ExtResource("6_344ge")]
+visible = false
 
 [node name="Xp" parent="." groups=["Xp"] instance=ExtResource("1_bo1nx")]
 position = Vector2(443, 282)

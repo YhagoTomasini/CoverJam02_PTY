@@ -1,6 +1,7 @@
 extends Control
 
 @export var voltarB : Button
+@onready var main: Node2D = $"../.."
 
 var parado : bool
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +11,6 @@ func _ready() -> void:
 
 func despausa():
 	get_tree().paused = false
-
 	visible = false
 	parado = false
 
@@ -24,7 +24,7 @@ func pausar():
 		parado = true
 		
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_pause"):
+	if event.is_action_pressed("ui_pause") && !main.player_morreu:
 		if !parado:
 			pausar()
 		else:
@@ -36,7 +36,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_menu_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://Scenes/pause.tscn")
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
 
 
 func _on_resetar_pressed() -> void:

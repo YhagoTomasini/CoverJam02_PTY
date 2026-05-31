@@ -12,6 +12,3 @@ var current_levelup = 10
 var lv_atual = 0
 
 @onready var player = preload("res://Prefabs/Player.tscn")
-
-func deatch():
-	print("Voce morreu")
