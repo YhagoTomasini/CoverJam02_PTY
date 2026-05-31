@@ -63,14 +63,7 @@ func LeveUp():
 	powerUp1 = arrayDeArmas.pick_random()
 	powerUp2 = arrayDeArmas.pick_random()
 	powerUp3 = arrayDeArmas.pick_random()
-	
-	for i in arrayColetadas:
-		while powerUp1 == i:
-			powerUp1 = arrayDeArmas.pick_random()
-		while powerUp2 == i:
-			powerUp2 = arrayDeArmas.pick_random()
-		while powerUp3 == i:
-			powerUp3 = arrayDeArmas.pick_random()
+
 			
 	match powerUp1:
 		faca:
