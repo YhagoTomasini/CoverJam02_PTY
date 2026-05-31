@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqwau6ccxmc0l"]
+[gd_scene load_steps=5 format=3 uid="uid://cqwau6ccxmc0l"]
 
 [ext_resource type="Script" uid="uid://eqfkm0t1renj" path="res://Scripts/credits.gd" id="1_r18jl"]
+[ext_resource type="Texture2D" uid="uid://bcs108psw8plx" path="res://Assets/Capa_coverJam.png" id="2_1bamb"]
 [ext_resource type="PackedScene" uid="uid://bxw6r1sye8gs" path="res://Scenes/pause.tscn" id="2_gryuy"]
 [ext_resource type="FontFile" uid="uid://ca3v04roj2t0f" path="res://Temas/Starborn.ttf" id="3_xelri"]
 
@@ -15,6 +16,12 @@ script = ExtResource("1_r18jl")
 scroll = NodePath("ScrollContainer")
 text = NodePath("ScrollContainer/MarginContainer/RichTextLabel")
 pause = NodePath("Pause")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_1bamb")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 clip_contents = false
