@@ -78,9 +78,11 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -20.0
 offset_top = 120.0
-offset_right = 20.0
-offset_bottom = 160.0
+offset_right = 12.0
+offset_bottom = 152.0
 grow_horizontal = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(16, 16)
 texture = ExtResource("4_ntg6w")
 
 [node name="Label" type="Label" parent="HBoxContainer/Button"]
@@ -118,9 +120,11 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -20.0
 offset_top = 120.0
-offset_right = 20.0
-offset_bottom = 160.0
+offset_right = 12.0
+offset_bottom = 152.0
 grow_horizontal = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(16, 16)
 texture = ExtResource("4_ntg6w")
 
 [node name="Label2" type="Label" parent="HBoxContainer/Button2"]
@@ -156,9 +160,11 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -20.0
 offset_top = 120.0
-offset_right = 20.0
-offset_bottom = 160.0
+offset_right = 12.0
+offset_bottom = 152.0
 grow_horizontal = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(16, 16)
 texture = ExtResource("4_ntg6w")
 
 [node name="Label3" type="Label" parent="HBoxContainer/Button3"]

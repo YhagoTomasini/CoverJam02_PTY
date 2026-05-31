@@ -12,23 +12,23 @@ extends Control
 @export var text_2: Label
 @export var text_3: Label
 
-var speed_icon = preload("res://Assets/flozinha.png")
-var speed_text = "Speed"
+var speed_icon = preload("res://Assets/buffs_velo.png")
+var speed_text = "SPEED"
 
-var health_icon = preload("res://Assets/flozinha.png")
-var health_text = "Health"
+var health_icon = preload("res://Assets/buffs_vida.png")
+var health_text = "HEALTH"
 
-var xp_icon = preload("res://Assets/flozinha.png")
-var xp_text = "Xp"
+var xp_icon = preload("res://Assets/buffs_XP2.png")
+var xp_text = "XP"
 
-var dano_icon = preload("res://Assets/pistol.png")
-var dano_text = "Dano"
+var dano_icon = preload("res://Assets/buffs_forca.png")
+var dano_text = "DANO"
 	
-var CD_icon = preload("res://Assets/bazuka.png")
-var CD_text = "Cd"
+var CD_icon = preload("res://Assets/buffs_CD.png")
+var CD_text = "CD"
 	
-var Size_icon = preload("res://Assets/faca.png")
-var Size_text = "Size"
+var Size_icon = preload("res://Assets/buffs_size.png")
+var Size_text = "SIZE"
 
 
 var speed = [speed_icon, speed_text,0.25]

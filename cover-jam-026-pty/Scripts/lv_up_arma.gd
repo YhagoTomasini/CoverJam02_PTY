@@ -22,13 +22,13 @@ var corpo_icon = preload("res://Assets/flozinha.png")
 var corpo_text = "Corpo seco"
 
 var pistola_icon = preload("res://Assets/pistol.png")
-var pistola_text = "Pistola"
+var pistola_text = "PISTOLA"
 	
 var bazuka_icon = preload("res://Assets/bazuka.png")
-var bazuka_text = "Bazuka"
+var bazuka_text = "BAZUKA"
 	
 var faca_icon = preload("res://Assets/faca.png")
-var faca_text = "Faca"
+var faca_text = "FACA"
 
 
 var mapinguari = [mapinguari_icon, mapinguari_text,0.25]
@@ -39,7 +39,7 @@ var bazuka = [bazuka_icon, bazuka_text, 0.1]
 var faca = [faca_icon, faca_text, 0.1]
 var test = [0,0,0]
 
-var arrayDeArmas =[faca,bazuka,pistola,corpo,mula,mapinguari] 
+var arrayDeArmas =[faca,bazuka,pistola] 
 var arrayColetadas =[test]
 
 var powerUp1 
