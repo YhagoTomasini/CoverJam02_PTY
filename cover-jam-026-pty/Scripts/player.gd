@@ -14,6 +14,9 @@ signal cooldown_finished
 
 @onready var timer : Timer = $Timer
 
+@export var anim_body : AnimatedSprite2D
+@export var anim_head : AnimatedSprite2D
+
 func _ready() -> void:
 	timer.wait_time = 1
 	timer.one_shot = true
@@ -43,13 +46,30 @@ func _physics_process(_delta: float) -> void:
 	# Movimentação do jogador
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
-	attack()
+	#attack() #no process????? não da para colocar a função do node do timer de "timeout"?
 	if direction:
 		velocity = direction * speed
 		Pivot.rotation = direction.angle()
+		
+		anim_body.play("Run")
+		anim_head.play("Run")
+		
+		if velocity.x > 0:
+			anim_body.flip_h = true
+			anim_head.flip_h = true
+			anim_head.position.x = 4
+		elif velocity.x < 0:
+			anim_body.flip_h = false
+			anim_head.flip_h = false
+			anim_head.position.x = -4
+			
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.y = move_toward(velocity.y, 0, speed)
+		
+		anim_body.play("Idle")
+		anim_head.play("Idle")
+		
 	move_and_slide()
 	
 func _input(event: InputEvent) -> void:
