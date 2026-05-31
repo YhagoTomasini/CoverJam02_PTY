@@ -13,6 +13,7 @@ shader_parameter/blur_amount = 8.0
 
 [node name="lv_up_arma" type="Control" node_paths=PackedStringArray("button", "button_2", "button_3", "icon_1", "icon_2", "icon_3", "text_1", "text_2", "text_3")]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

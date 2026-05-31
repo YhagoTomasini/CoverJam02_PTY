@@ -2,7 +2,8 @@ extends Area2D
 
 var xp = 10
 var is_name = "xp"
-@onready var collision: CollisionShape2D = $collisiona
+@onready var collision: CollisionShape2D = $collision
+
 
 
 func _ready() -> void:

@@ -16,6 +16,10 @@ var xp = 0
 @export var anim_body : AnimatedSprite2D
 @export var anim_head : AnimatedSprite2D
 
+@onready var lv_up_arma: Control = $"../CanvasLayer/lv_up_arma"
+@onready var lv_up_buff: Control = $"../CanvasLayer/lv_up_buff"
+
+
 func _ready() -> void:
 	timer.wait_time = 1
 	timer.one_shot = true
@@ -30,8 +34,17 @@ func set_Health(health_value):
 	
 func check_xp():
 	if xp >= Global.current_levelup:
-		Global.current_levelup = Global.current_levelup * 2.10
-		print("Level UP")
+		Global.current_levelup = Global.current_levelup * 1.7
+		Global.lv_atual += 1
+		if Global.lv_atual == 1:
+			lv_up_arma.LeveUp()
+		elif Global.lv_atual == 5:
+			lv_up_arma.LeveUp()
+		elif Global.lv_atual == 10:
+			lv_up_arma.LeveUp()
+		else:
+			lv_up_buff.LeveUp()
+		print("Level UP:", Global.lv_atual)
 		
 func Damage(damage_value: float):
 	if (health >= damage_value):

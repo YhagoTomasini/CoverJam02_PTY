@@ -59,7 +59,7 @@ func _process(_delta: float) -> void:
 		
 func LeveUp():
 	visible = true
-	
+	get_tree().paused = true
 	powerUp1 = arrayDeArmas.pick_random()
 	powerUp2 = arrayDeArmas.pick_random()
 	powerUp3 = arrayDeArmas.pick_random()
@@ -151,6 +151,7 @@ func _on_button_pressed() -> void:
 			#adicionar funcao
 			arrayColetadas.append(mapinguari)
 	visible = false
+	get_tree().paused = false
 
 
 func _on_button_2_pressed() -> void:
@@ -174,6 +175,7 @@ func _on_button_2_pressed() -> void:
 			#adicionar funcao
 			arrayColetadas.append(mapinguari)
 	visible = false
+	get_tree().paused = false
 
 
 func _on_button_3_pressed() -> void:
@@ -197,3 +199,4 @@ func _on_button_3_pressed() -> void:
 			#adicionar funcao
 			arrayColetadas.append(mapinguari)
 	visible = false
+	get_tree().paused = false

@@ -37,18 +37,17 @@ var xp = [xp_icon, xp_text, 0.15]
 var dano = [dano_icon,dano_text, 0.1]
 var CD = [CD_icon, CD_text, 0.1]
 var Size = [Size_icon, Size_text, 0.1]
-var test = [0,0,0]
 
-var arrayDeArmas =[speed,health,xp,dano,CD,size] 
-var arrayColetadas =[test]
+var arrayDeArmas =[speed,health,xp,dano,CD,Size] 
+
 
 var powerUp1 
 var powerUp2
 var powerUp3
 
 
-func _ready() -> void:
-	button.grab_focus()
+#func _ready() -> void:
+	##button.grab_focus()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_page_down"):
@@ -59,12 +58,11 @@ func _process(_delta: float) -> void:
 		
 func LeveUp():
 	visible = true
-	
+	get_tree().paused = true
 	powerUp1 = arrayDeArmas.pick_random()
 	powerUp2 = arrayDeArmas.pick_random()
 	powerUp3 = arrayDeArmas.pick_random()
 
-			
 	match powerUp1:
 		speed:
 			text_1.text = speed[1]
@@ -136,8 +134,9 @@ func _on_button_pressed() -> void:
 		CD:
 			Global.Multiple_CD += CD[2]
 		Size:
-			Global.Multiple_Size += Size[2]
+			Global.Multiple_size += Size[2]
 	visible = false
+	get_tree().paused = false
 
 
 func _on_button_2_pressed() -> void:
@@ -155,7 +154,7 @@ func _on_button_2_pressed() -> void:
 		Size:
 			Global.Multiple_Size += Size[2]
 	visible = false
-
+	get_tree().paused = false
 
 func _on_button_3_pressed() -> void:
 	match powerUp3:
@@ -172,3 +171,4 @@ func _on_button_3_pressed() -> void:
 		Size:
 			Global.Multiple_Size += Size[2]
 	visible = false
+	get_tree().paused = false

@@ -9,6 +9,7 @@ var Multiple_CD = 1.0
 var Multiple_size = 1.0
 
 var current_levelup = 10
+var lv_atual = 0
 
 @onready var player = preload("res://Prefabs/Player.tscn")
 
