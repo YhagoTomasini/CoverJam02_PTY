@@ -46,7 +46,7 @@ animations = [{
 script = ExtResource("1_ky4g8")
 is_name = "Enemy2"
 speed = 120.0
-max_health = 5.0
+max_health = 10.0
 damage = 10
 animation = NodePath("AnimatedSprite2D")
 
@@ -54,8 +54,8 @@ animation = NodePath("AnimatedSprite2D")
 shape = SubResource("RectangleShape2D_4gyqm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(0.5137255, 0.5294118, 1, 1)
 sprite_frames = SubResource("SpriteFrames_g7nnu")
 animation = &"Run"
+autoplay = "Run"
 frame = 2
 frame_progress = 0.09869817
