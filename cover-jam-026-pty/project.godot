@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CoverJam026_PTY"
-run/main_scene="uid://dme32dp4asol8"
+run/main_scene="uid://camf5qoe0ayfx"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -29,6 +29,7 @@ window/stretch/mode="viewport"
 
 Player=""
 Enemy=""
+XP=""
 Xp=""
 
 [input]

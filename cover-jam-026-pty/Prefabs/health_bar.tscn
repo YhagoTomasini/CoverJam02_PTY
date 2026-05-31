@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dascp6gsufkdq"]
+[gd_scene load_steps=11 format=3 uid="uid://dascp6gsufkdq"]
 
 [ext_resource type="Texture2D" uid="uid://blmxdan8c5jxa" path="res://Assets/MC_Head.png" id="1_w3g03"]
+[ext_resource type="FontFile" uid="uid://ca3v04roj2t0f" path="res://Temas/Starborn.ttf" id="2_cq6q6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq6q6"]
 bg_color = Color(0.32, 0.22293335, 0.112, 1)
@@ -53,17 +54,44 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Theme" id="Theme_u8ndr"]
+default_font = ExtResource("2_cq6q6")
+default_font_size = 24
+Button/colors/font_focus_color = Color(0.9490196, 0.30980393, 0.4862745, 1)
+Button/colors/font_hover_color = Color(0.88235295, 0.27058825, 0.47843137, 1)
+Button/colors/font_hover_pressed_color = Color(0.88235295, 0.27058825, 0.47843137, 1)
+Button/colors/font_outline_color = Color(0.41960785, 0, 0.4745098, 1)
+Button/colors/font_pressed_color = Color(0.88235295, 0.27058825, 0.47843137, 1)
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("2_cq6q6")
+
 [node name="health_bar" type="ProgressBar"]
-offset_right = 100.0
-offset_bottom = 5.0
-scale = Vector2(2, 2)
+offset_right = 200.0
+offset_bottom = 10.0
 theme_override_styles/background = SubResource("StyleBoxFlat_cq6q6")
 theme_override_styles/fill = SubResource("StyleBoxFlat_u8ndr")
 value = 50.0
 show_percentage = false
 
 [node name="headMove" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 6)
+position = Vector2(0, 9)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_1o5eq")
 autoplay = "default"
-frame_progress = 0.50443727
+frame_progress = 0.88195163
+
+[node name="lv_txt" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -32.0
+offset_right = 79.0
+offset_bottom = -4.0
+theme = SubResource("Theme_u8ndr")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.8392157, 0.50980395, 0.13333334, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 16
+text = "HP"
+vertical_alignment = 2

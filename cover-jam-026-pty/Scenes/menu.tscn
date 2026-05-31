@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://chr88fhcsfkjg"]
+[gd_scene load_steps=4 format=3 uid="uid://camf5qoe0ayfx"]
 
-[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://bo621uiijl4wq" path="res://Scripts/menu.gd" id="1_1rerr"]
 [ext_resource type="Texture2D" uid="uid://bcs108psw8plx" path="res://Assets/Capa_coverJam.png" id="2_cayip"]
-[ext_resource type="Theme" uid="uid://c8ky7qr5b1nvq" path="res://Temas/botoes_tema.tres" id="3_158mb"]
+[ext_resource type="Theme" path="res://Temas/botoes_tema.tres" id="3_158mb"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
