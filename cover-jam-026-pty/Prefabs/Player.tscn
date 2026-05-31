@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c0bvips6gcq2o" path="res://Assets/MC_Head_run.png" id="5_3ygst"]
 [ext_resource type="Script" uid="uid://b0ymqb8th35u2" path="res://Scripts/pivot_spawn.gd" id="7_javds"]
 [ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="8_3ygst"]
-[ext_resource type="Script" uid="uid://dk5xcobr6150d" path="res://Prefabs/fire.gd" id="9_lhekp"]
+[ext_resource type="Script" path="res://Prefabs/fire.gd" id="9_lhekp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e80uo"]
 size = Vector2(32, 32)
@@ -186,6 +186,18 @@ animation = &"Run"
 frame_progress = 0.25737447
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = -640
+limit_top = -480
+limit_right = 1280
+limit_bottom = 960
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_left_margin = 0.3
+drag_top_margin = 0.3
+drag_right_margin = 0.3
+drag_bottom_margin = 0.3
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="Area2D" type="Area2D" parent="." groups=["Xp"]]
 collision_mask = 3

@@ -90,6 +90,7 @@ visible = false
 [node name="lv_up_buff" parent="CanvasLayer" instance=ExtResource("5_344ge")]
 
 [node name="Morte" parent="CanvasLayer" instance=ExtResource("6_344ge")]
+unique_name_in_owner = true
 visible = false
 
 [node name="Xp" parent="." groups=["Xp"] instance=ExtResource("1_bo1nx")]

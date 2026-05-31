@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var player: CharacterBody2D = %Player
-@onready var morte: Control = $CanvasLayer/Morte
+@onready var morte: Control = %Morte
 
 var player_morreu : bool
 
