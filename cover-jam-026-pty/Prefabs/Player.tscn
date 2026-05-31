@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="8_3ygst"]
 [ext_resource type="PackedScene" uid="uid://djwg6cxnyae7i" path="res://Prefabs/enemy2.tscn" id="8_t8lmw"]
 [ext_resource type="PackedScene" uid="uid://dcaprr75qoiwl" path="res://Prefabs/enemy3.tscn" id="9_k2qb3"]
-[ext_resource type="Script" path="res://Prefabs/fire.gd" id="9_lhekp"]
+[ext_resource type="Script" uid="uid://dk5xcobr6150d" path="res://Prefabs/fire.gd" id="9_lhekp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e80uo"]
 size = Vector2(32, 32)
@@ -224,6 +224,7 @@ arraysDeEnemys = Array[PackedScene]([ExtResource("8_3ygst"), ExtResource("8_t8lm
 position = Vector2(600, 0)
 
 [node name="Timer" type="Timer" parent="PivotSpawn"]
+wait_time = 2.6
 
 [node name="Timer_sword" type="Timer" parent="."]
 wait_time = 1.2
