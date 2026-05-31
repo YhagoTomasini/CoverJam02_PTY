@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://qk5wtcg5ijhk"]
 
-[ext_resource type="Texture2D" uid="uid://dxpm7p8nk0og2" path="res://Assets/pistol.png" id="1_60es3"]
-[ext_resource type="Script" uid="uid://bojlpexismyr5" path="res://range.gd" id="1_sunpe"]
+[ext_resource type="Script" uid="uid://bojlpexismyr5" path="res://Scripts/range.gd" id="1_42m38"]
+[ext_resource type="Texture2D" uid="uid://dxpm7p8nk0og2" path="res://Assets/pistol.png" id="2_7k45y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sunpe"]
 size = Vector2(32, 32)
 
 [node name="Range" type="Area2D"]
-script = ExtResource("1_sunpe")
+script = ExtResource("1_42m38")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 0.5)
@@ -16,4 +16,4 @@ shape = SubResource("RectangleShape2D_sunpe")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 1, 0, 1)
 scale = Vector2(2, 0.5)
-texture = ExtResource("1_60es3")
+texture = ExtResource("2_7k45y")
