@@ -5,5 +5,11 @@
 [resource]
 default_font = ExtResource("1_tlbgt")
 default_font_size = 24
-Button/font_sizes/font_size = 24
+Button/colors/font_focus_color = Color(0.9490196, 0.30980393, 0.4862745, 1)
+Button/colors/font_hover_color = Color(0.88235295, 0.27058825, 0.47843137, 1)
+Button/colors/font_hover_pressed_color = Color(0.88235295, 0.27058825, 0.47843137, 1)
+Button/colors/font_outline_color = Color(0.41960785, 0, 0.4745098, 1)
+Button/colors/font_pressed_color = Color(0.88235295, 0.27058825, 0.47843137, 1)
+Button/constants/outline_size = 10
+Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_tlbgt")

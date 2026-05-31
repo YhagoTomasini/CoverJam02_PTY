@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var damage = 10
 @export var animation : AnimatedSprite2D
 
-const XP = preload("uid://biy5a2sgl1041")
+const XP = preload("res://Prefabs/xp.tscn")
 
 var player : CharacterBody2D
 

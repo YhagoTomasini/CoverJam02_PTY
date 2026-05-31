@@ -1,9 +1,94 @@
-[gd_scene load_steps=0 format=3 uid="uid://ca23mj2uxainr"]
+[gd_scene load_steps=3 format=3 uid="uid://cqwau6ccxmc0l"]
 
-[node name="Credits" type="Control"]
+[ext_resource type="Script" uid="uid://eqfkm0t1renj" path="res://Scripts/credits.gd" id="1_r18jl"]
+[ext_resource type="PackedScene" uid="uid://bxw6r1sye8gs" path="res://Scenes/pause.tscn" id="2_gryuy"]
+
+[node name="Credits" type="Control" node_paths=PackedStringArray("scroll", "text", "pause")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r18jl")
+scroll = NodePath("ScrollContainer")
+text = NodePath("ScrollContainer/MarginContainer/RichTextLabel")
+pause = NodePath("Pause")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 720
+theme_override_constants/margin_bottom = 720
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+text = "[b]PAPELITO[/b]
+
+[b]Por:[/b]
+Artêmio Neto, Lucas de Paulo Bernardo e Yhago Tomasini
+
+_______________________________________
+
+[b]Time[/b]
+
+[b]Game Design:[/b]
+Artêmio Neto, Lucas de Paulo Bernardo e Yhago Tomasini
+
+[b]Programação:[/b]
+Artêmio Neto e Lucas de Paulo Bernardo
+
+[b]Design de personagem:[/b]
+Yhago tomasini
+
+[b]Cenários:[/b]
+Yhago Tomasini
+
+[b]UI/UX Design:[/b]
+Yhago Tomasini
+
+[b]Animações:[/b]
+Yhago Tomasini
+
+_______________________________________
+
+[b]Ferramentas e tecnologias[/b]
+Godot Engine
+Clip Studio Paint
+LibreSprite
+…
+
+Paciência
+Amor materno
+Dor
+Amor ao design
+Poder da amizade
+Mais dor
+_______________________________________
+
+Livre de de conteúdos gerados por Inteligência Artificial
+_______________________________________
+
+Ano de lançamento 2026 – Todos direitos reservados. :P
+
+________________________________________
+
+[b]FIM![/b]
+"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Pause" parent="." instance=ExtResource("2_gryuy")]
+layout_mode = 1
