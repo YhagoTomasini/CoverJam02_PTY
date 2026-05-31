@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://dme32dp4asol8"]
+[gd_scene load_steps=12 format=4 uid="uid://dme32dp4asol8"]
 
 [ext_resource type="PackedScene" uid="uid://br0ibc0cms7wf" path="res://Prefabs/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b8ug20pd7be00" path="res://Scripts/main.gd" id="1_ynf5e"]
-[ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://cv6t31kympwot" path="res://Scenes/lv_up_arma.tscn" id="4_6bp64"]
 [ext_resource type="PackedScene" uid="uid://bxw6r1sye8gs" path="res://Scenes/pause.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://boy6cbo0ikvxb" path="res://Scenes/lv_up_buff.tscn" id="5_344ge"]
@@ -70,10 +69,6 @@ unique_name_in_owner = true
 position = Vector2(319, 211)
 collision_layer = 1
 collision_mask = 1
-
-[node name="Enemy" parent="." instance=ExtResource("3_8gbba")]
-position = Vector2(137, -9)
-speed = 100.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5
