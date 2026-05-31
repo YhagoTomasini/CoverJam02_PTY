@@ -14,4 +14,6 @@ var lv_atual = 0
 var enemys = []
 var armas_atual = []
 
+var player_morreu : bool = false
+
 @onready var player = preload("res://Prefabs/Player.tscn")
