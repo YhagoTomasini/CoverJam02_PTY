@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dme32dp4asol8"]
+[gd_scene load_steps=13 format=4 uid="uid://dme32dp4asol8"]
 
 [ext_resource type="PackedScene" uid="uid://br0ibc0cms7wf" path="res://Prefabs/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b8ug20pd7be00" path="res://Scripts/main.gd" id="1_ynf5e"]
@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bxw6r1sye8gs" path="res://Scenes/pause.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://boy6cbo0ikvxb" path="res://Scenes/lv_up_buff.tscn" id="5_344ge"]
 [ext_resource type="PackedScene" uid="uid://cvn3rdjlp7fhi" path="res://Prefabs/flower.tscn" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://dnmc6a0i8p3e7" path="res://Scenes/morte.tscn" id="6_344ge"]
+[ext_resource type="PackedScene" uid="uid://waindd3syvaq" path="res://Scenes/morte.tscn" id="6_344ge"]
 [ext_resource type="Texture2D" uid="uid://d38kcgchyhpe" path="res://Assets/bg1.png" id="10_hptm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hptm8"]
@@ -23,9 +23,6 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_hptm8")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
-
-[sub_resource type="Resource" id="Resource_kry3j"]
-metadata/__load_path__ = "res://range.tscn"
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ynf5e")
@@ -73,7 +70,6 @@ unique_name_in_owner = true
 position = Vector2(319, 211)
 collision_layer = 1
 collision_mask = 1
-attack_scene = SubResource("Resource_kry3j")
 
 [node name="Enemy" parent="." instance=ExtResource("3_8gbba")]
 position = Vector2(137, -9)
