@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dme32dp4asol8"]
+[gd_scene load_steps=14 format=4 uid="uid://dme32dp4asol8"]
 
 [ext_resource type="PackedScene" uid="uid://br0ibc0cms7wf" path="res://Prefabs/Player.tscn" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://b8ug20pd7be00" path="res://Scripts/main.gd" id="1_ynf5e"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://boy6cbo0ikvxb" path="res://Scenes/lv_up_buff.tscn" id="5_344ge"]
 [ext_resource type="PackedScene" uid="uid://cvn3rdjlp7fhi" path="res://Prefabs/flower.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dnmc6a0i8p3e7" path="res://Scenes/morte.tscn" id="6_344ge"]
+[ext_resource type="PackedScene" uid="uid://cj8e4x7rbn3at" path="res://Prefabs/xp_bar.tscn" id="10_6iyac"]
 [ext_resource type="PackedScene" uid="uid://dascp6gsufkdq" path="res://Prefabs/health_bar.tscn" id="10_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://d38kcgchyhpe" path="res://Assets/bg1.png" id="10_hptm8"]
 
@@ -152,5 +153,11 @@ offset_left = 44.0
 offset_top = 32.0
 offset_right = 144.0
 offset_bottom = 37.0
+
+[node name="xp_bar" parent="HUD" instance=ExtResource("10_6iyac")]
+offset_left = 220.0
+offset_top = 455.0
+offset_right = 320.0
+offset_bottom = 460.0
 
 [connection signal="timeout" from="spawner_de_flor" to="." method="_on_spawner_de_flor_timeout"]

@@ -8,8 +8,10 @@ var Multiple_Health = 1.0
 var Multiple_CD = 1.0
 var Multiple_size = 1.0
 
+
 var current_levelup = 10
 var lv_atual = 0
+var xp = 0
 
 var enemys = []
 var armas_atual = []

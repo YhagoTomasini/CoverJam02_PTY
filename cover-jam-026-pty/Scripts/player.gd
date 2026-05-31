@@ -7,7 +7,7 @@ var is_name = "Player"
 
 
 var level = 0
-var xp = 0
+
 
 @onready var Pivot: Node2D = $PivotAttack
 @onready var attack_Postion: Node2D = $PivotAttack/MarkerAttack
@@ -43,9 +43,10 @@ func set_Health(health_value):
 	print(health)
 	
 func check_xp():
-	if xp >= Global.current_levelup:
-		Global.current_levelup = Global.current_levelup * 1.7
+	if Global.xp >= Global.current_levelup:
+		Global.current_levelup = Global.current_levelup * 1.15
 		Global.lv_atual += 1
+		Global.xp = 0
 		if Global.lv_atual == 1:
 			timer_spawn.start()
 			lv_up_arma.LeveUp()
