@@ -1,9 +1,11 @@
 extends Area2D
 
 var cooldown = 1 * Global.Multiple_CD
+var Multiple_size = 1 * Global.Multiple_size
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	global_position
+	scale = Vector2(Multiple_size,Multiple_size)
 	await get_tree().create_timer(0.2).timeout
 	queue_free()
 

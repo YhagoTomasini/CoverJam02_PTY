@@ -6,8 +6,8 @@ var health = 100 * Global.Multiple_Health
 var level = 0
 var xp = 0
 
-@onready var Pivot: Node2D = $Pivot
-@onready var attack_Postion: Node2D = $Pivot/Marker2D
+@onready var Pivot: Node2D = $PivotAttack
+@onready var attack_Postion: Node2D = $PivotAttack/MarkerAttack
 @export var attack_scene: PackedScene
 
 @onready var timer : Timer = $Timer
@@ -30,7 +30,7 @@ func Damage(damage_value: float):
 		health -= damage_value
 		print("Voce tomou: ",damage_value," dano")
 	else:
-		Global.Deatch()
+		Global.deatch()
 		
 	
 func _physics_process(_delta: float) -> void:
@@ -67,7 +67,8 @@ func _input(event: InputEvent) -> void:
 		print("A")
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body)
+	if body.is_in_group("Xp"):
+		print("XP")
 	if body.is_in_group("Enemy"):
 		Damage(body.damage)
 
