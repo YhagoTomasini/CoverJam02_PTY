@@ -58,8 +58,6 @@ func check_xp():
 			lv_up_arma.LeveUp()
 		elif Global.lv_atual == 5:
 			lv_up_arma.LeveUp()
-		elif Global.lv_atual == 10:
-			lv_up_arma.LeveUp()
 		else:
 			lv_up_buff.LeveUp()
 		print("Level UP:", Global.lv_atual)

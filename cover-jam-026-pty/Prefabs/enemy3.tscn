@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhlf78tcq3kq0"]
+[gd_scene load_steps=9 format=3 uid="uid://dcaprr75qoiwl"]
 
 [ext_resource type="Script" uid="uid://djwlgr8uux1my" path="res://Scripts/enemy.gd" id="1_beskb"]
 [ext_resource type="Texture2D" uid="uid://rsanjb764x6a" path="res://Assets/Inim_Capi_run.png" id="2_6wc5s"]
@@ -44,7 +44,7 @@ animations = [{
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("animation") groups=["Enemy"]]
 script = ExtResource("1_beskb")
-speed = 75.0
+speed = 64.0
 max_health = 30.0
 damage = 10
 animation = NodePath("AnimatedSprite2D")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cya5tpf2nmfsb"]
+[gd_scene load_steps=9 format=3 uid="uid://djwg6cxnyae7i"]
 
 [ext_resource type="Script" uid="uid://djwlgr8uux1my" path="res://Scripts/enemy.gd" id="1_ky4g8"]
 [ext_resource type="Texture2D" uid="uid://dbf4yndog387" path="res://Assets/Gamuto.png" id="2_sb3na"]
@@ -45,7 +45,7 @@ animations = [{
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("animation") groups=["Enemy"]]
 script = ExtResource("1_ky4g8")
 is_name = "Enemy2"
-speed = 200.0
+speed = 120.0
 max_health = 5.0
 damage = 10
 animation = NodePath("AnimatedSprite2D")
