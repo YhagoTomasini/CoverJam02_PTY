@@ -6,9 +6,18 @@ var health = 100
 var level = 0
 var xp = 0
 
+signal cooldown_finished
+
 @onready var Pivot: Node2D = $Pivot
 @onready var attack_Postion: Node2D = $Pivot/Marker2D
-@export var attack: PackedScene
+@export var attack_scene: PackedScene
+
+@onready var timer : Timer = $Timer
+
+func _ready() -> void:
+	timer.wait_time = 1
+	timer.one_shot = true
+	timer.timeout.connect(_on_cooldown_timeout)
 
 func Check_xp():
 	if xp >= Global.current_levelup:
@@ -22,10 +31,19 @@ func Damage(damage_value: float):
 	else:
 		Global.Deatch()
 
+func attack():
+	if timer.is_stopped():
+		var attack_instance = attack_scene.instantiate()
+		attack_instance.global_position = attack_Postion.global_position
+		attack_instance.global_rotation = Pivot.global_rotation
+		get_parent().add_child(attack_instance)
+		timer.start()
+	
 func _physics_process(_delta: float) -> void:
 	# Movimentação do jogador
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
+	attack()
 	if direction:
 		velocity = direction * speed
 		Pivot.rotation = direction.angle()
@@ -36,12 +54,12 @@ func _physics_process(_delta: float) -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
-		var attack_instance = attack.instantiate()
-		attack_instance.global_position = attack_Postion.global_position
-		attack_instance.global_rotation = Pivot.global_rotation
-		get_parent().add_child(attack_instance)
+		print("A")
 		pass
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
 		Damage(body.damage)
+
+func _on_cooldown_timeout() -> void:
+	cooldown_finished.emit()
