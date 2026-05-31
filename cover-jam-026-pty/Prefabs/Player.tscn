@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://br0ibc0cms7wf"]
+[gd_scene load_steps=35 format=3 uid="uid://br0ibc0cms7wf"]
 
 [ext_resource type="Script" uid="uid://mwsctqlv5kg" path="res://Scripts/player.gd" id="1_kpjcp"]
 [ext_resource type="PackedScene" uid="uid://qk5wtcg5ijhk" path="res://Prefabs/range.tscn" id="2_t8lmw"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c0bvips6gcq2o" path="res://Assets/MC_Head_run.png" id="5_3ygst"]
 [ext_resource type="Script" uid="uid://b0ymqb8th35u2" path="res://Scripts/pivot_spawn.gd" id="7_javds"]
 [ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="8_3ygst"]
-[ext_resource type="Script" uid="uid://dk5xcobr6150d" path="res://Prefabs/fire.gd" id="9_lhekp"]
+[ext_resource type="PackedScene" uid="uid://djwg6cxnyae7i" path="res://Prefabs/enemy2.tscn" id="8_t8lmw"]
+[ext_resource type="PackedScene" uid="uid://dcaprr75qoiwl" path="res://Prefabs/enemy3.tscn" id="9_k2qb3"]
+[ext_resource type="Script" path="res://Prefabs/fire.gd" id="9_lhekp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e80uo"]
 size = Vector2(32, 32)
@@ -216,6 +218,7 @@ position = Vector2(40, 0)
 rotation = 0.2443461
 script = ExtResource("7_javds")
 enemy = ExtResource("8_3ygst")
+arraysDeEnemys = Array[PackedScene]([ExtResource("8_3ygst"), ExtResource("8_t8lmw"), ExtResource("9_k2qb3")])
 
 [node name="MarkerSpawn" type="Marker2D" parent="PivotSpawn"]
 position = Vector2(600, 0)

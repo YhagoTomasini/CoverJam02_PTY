@@ -6,7 +6,7 @@ var cooldown : float = 0.6
 @onready var pivotSpaw : Node2D = $"."
 @onready var markerAttack : Marker2D = $MarkerSpawn
 @export var enemy : PackedScene
-
+@export var arraysDeEnemys : Array[PackedScene]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#timer.start()
@@ -21,7 +21,8 @@ func _on_timer_timeout() -> void:
 	pass # Replace with function body.
 
 func spawn():
-	var enemy_instance = enemy.instantiate()
+	var escolido = arraysDeEnemys.pick_random()
+	var enemy_instance = escolido.instantiate()
 	pivotSpaw.global_rotation = randf_range(0,360)
 	enemy_instance.global_position = markerAttack.global_position
 	get_parent().get_parent().add_child(enemy_instance)
