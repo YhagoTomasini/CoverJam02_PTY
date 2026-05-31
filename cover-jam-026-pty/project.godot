@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="CoverJam026_PTY"
-run/main_scene="uid://dnsbid0yik3g6"
+run/main_scene="uid://camf5qoe0ayfx"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
