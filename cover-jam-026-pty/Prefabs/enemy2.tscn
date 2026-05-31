@@ -1,41 +1,41 @@
 [gd_scene load_steps=9 format=3 uid="uid://cya5tpf2nmfsb"]
 
 [ext_resource type="Script" uid="uid://djwlgr8uux1my" path="res://Scripts/enemy.gd" id="1_ky4g8"]
-[ext_resource type="Texture2D" uid="uid://rsanjb764x6a" path="res://Assets/Inim_Capi_run.png" id="3_y3c0p"]
+[ext_resource type="Texture2D" uid="uid://dbf4yndog387" path="res://Assets/Gamuto.png" id="2_sb3na"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_30yes"]
-atlas = ExtResource("3_y3c0p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ky4g8"]
+atlas = ExtResource("2_sb3na")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n7q57"]
-atlas = ExtResource("3_y3c0p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbua2"]
+atlas = ExtResource("2_sb3na")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_80imi"]
-atlas = ExtResource("3_y3c0p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3c0p"]
+atlas = ExtResource("2_sb3na")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_osttl"]
-atlas = ExtResource("3_y3c0p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioghj"]
+atlas = ExtResource("2_sb3na")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g7nnu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_30yes")
+"texture": SubResource("AtlasTexture_ky4g8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n7q57")
+"texture": SubResource("AtlasTexture_jbua2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_80imi")
+"texture": SubResource("AtlasTexture_y3c0p")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_osttl")
+"texture": SubResource("AtlasTexture_ioghj")
 }],
 "loop": true,
 "name": &"Run",
@@ -44,6 +44,7 @@ animations = [{
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("animation") groups=["Enemy"]]
 script = ExtResource("1_ky4g8")
+is_name = "Enemy2"
 speed = 200.0
 max_health = 5.0
 damage = 10
@@ -56,3 +57,5 @@ shape = SubResource("RectangleShape2D_4gyqm")
 self_modulate = Color(0.5137255, 0.5294118, 1, 1)
 sprite_frames = SubResource("SpriteFrames_g7nnu")
 animation = &"Run"
+frame = 2
+frame_progress = 0.09869817
