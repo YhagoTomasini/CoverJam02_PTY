@@ -7,6 +7,10 @@ extends CharacterBody2D
 @export var damage = 10
 @export var animation : AnimatedSprite2D
 
+const XP = preload("uid://biy5a2sgl1041")
+
+
+
 var player : CharacterBody2D
 
 func _ready() -> void:
@@ -28,6 +32,9 @@ func receive_damage(damage_value: float):
 	if health > damage_value:
 		health -= damage_value
 	else:
+		var xp_drop = XP.instantiate()
+		xp_drop.global_position = global_position
+		add_sibling(xp_drop)
 		deatch()
 
 func deatch():
