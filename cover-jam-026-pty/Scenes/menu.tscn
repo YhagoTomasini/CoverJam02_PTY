@@ -58,7 +58,7 @@ theme_override_constants/separation = 16
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_158mb")
-text = "Play"
+text = "Jogar"
 flat = true
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
@@ -68,7 +68,7 @@ layout_mode = 2
 [node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_158mb")
-text = "Credits"
+text = "Creditos"
 flat = true
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
