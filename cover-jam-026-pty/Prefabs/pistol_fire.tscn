@@ -1,20 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbgla2xv2oblv"]
+[gd_scene load_steps=5 format=3 uid="uid://dbgla2xv2oblv"]
 
 [ext_resource type="Script" uid="uid://b5aggn51ykmv3" path="res://Prefabs/pistol.gd" id="1_lpdot"]
-[ext_resource type="Texture2D" uid="uid://dxpm7p8nk0og2" path="res://Assets/pistol.png" id="2_cojem"]
+
+[sub_resource type="Curve" id="Curve_f7nhj"]
+_limits = [0.0, 16.0, 0.0, 1.0]
+_data = [Vector2(0, 3.5955067), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.7528086, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sunpe"]
-size = Vector2(32, 32)
+size = Vector2(8, 8)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_f7nhj"]
 
 [node name="Pistol_fire" type="Area2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_lpdot")
 
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+scale = Vector2(6, 6)
+amount = 16
+lifetime = 0.27
+randomness = 0.03
+gravity = Vector2(0, -10)
+angle_max = 360.0
+scale_amount_curve = SubResource("Curve_f7nhj")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_sunpe")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("2_cojem")
+scale = Vector2(6, 6)
+texture = SubResource("CanvasTexture_f7nhj")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

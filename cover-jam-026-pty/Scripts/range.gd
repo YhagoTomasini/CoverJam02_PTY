@@ -3,9 +3,12 @@ extends Area2D
 var cooldown = 1 * Global.Multiple_CD
 var Multiple_size = 1 * Global.Multiple_size
 
+@export var animate : AnimatedSprite2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	scale = Vector2(Multiple_size,Multiple_size)
+	animate.play("default")
 	await get_tree().create_timer(0.2).timeout
 	queue_free()
 
