@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c8ky7qr5b1nvq"]
+
+[ext_resource type="FontFile" uid="uid://ca3v04roj2t0f" path="res://Temas/Starborn.ttf" id="1_tlbgt"]
+
+[resource]
+default_font = ExtResource("1_tlbgt")
+default_font_size = 24
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_tlbgt")
