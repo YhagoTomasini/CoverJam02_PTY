@@ -2,8 +2,7 @@ extends CharacterBody2D
 
 @export var is_name = "Enemy"
 @export var speed = 0.0
-@export var max_health = 0.0
-@export var health = max_health
+@export var health = 0
 @export var damage = 00
 @export var animation : AnimatedSprite2D
 

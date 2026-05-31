@@ -13,10 +13,10 @@ extends Control
 @export var text_3: Label
 
 var speed_icon = preload("res://Assets/buffs_velo.png")
-var speed_text = "SPEED"
+var speed_text = "VELOCIDADE"
 
 var health_icon = preload("res://Assets/buffs_vida.png")
-var health_text = "HEALTH"
+var health_text = "VIDA"
 
 var xp_icon = preload("res://Assets/buffs_XP2.png")
 var xp_text = "XP"
@@ -25,18 +25,18 @@ var dano_icon = preload("res://Assets/buffs_forca.png")
 var dano_text = "DANO"
 	
 var CD_icon = preload("res://Assets/buffs_CD.png")
-var CD_text = "CD"
+var CD_text = "COOLDOWN"
 	
 var Size_icon = preload("res://Assets/buffs_size.png")
-var Size_text = "SIZE"
+var Size_text = "TAMANHO"
 
 
 var speed = [speed_icon, speed_text,0.3]
-var health = [health_icon, health_text,0.15]
+var health = [health_icon, health_text,0.2]
 var xp = [xp_icon, xp_text, 0.2]
 var dano = [dano_icon,dano_text, 0.2]
-var CD = [CD_icon, CD_text, 0.3]
-var Size = [Size_icon, Size_text, 0.25]
+var CD = [CD_icon, CD_text, 0.15]
+var Size = [Size_icon, Size_text, 0.2]
 
 var arrayDeArmas =[speed,health,xp,dano,CD,Size] 
 

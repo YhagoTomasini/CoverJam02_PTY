@@ -46,7 +46,7 @@ animations = [{
 script = ExtResource("1_ky4g8")
 is_name = "Enemy2"
 speed = 120.0
-max_health = 10.0
+health = 15
 damage = 10
 animation = NodePath("AnimatedSprite2D")
 
