@@ -38,9 +38,10 @@ func receive_damage(damage_value: float):
 		deatch()
 
 func slow():
-	speed -= speed/2
+	var speed_atual = speed
+	speed /= 2
 	await get_tree().create_timer(0.8).timeout
-	speed += speed*2
+	speed = speed_atual
 
 func deatch():
 	queue_free()
