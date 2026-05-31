@@ -1,8 +1,17 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=4 format=3 uid="uid://camf5qoe0ayfx"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://chr88fhcsfkjg"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://bo621uiijl4wq" path="res://Scripts/menu.gd" id="1_1rerr"]
 [ext_resource type="Texture2D" uid="uid://bcs108psw8plx" path="res://Assets/Capa_coverJam.png" id="2_cayip"]
+<<<<<<< Updated upstream
 [ext_resource type="Theme" path="res://Temas/botoes_tema.tres" id="3_158mb"]
+=======
+[ext_resource type="Theme" uid="uid://c8ky7qr5b1nvq" path="res://Temas/botoes_tema.tres" id="3_158mb"]
+[ext_resource type="FontFile" uid="uid://ca3v04roj2t0f" path="res://Temas/Starborn.ttf" id="3_wwsa2"]
+>>>>>>> Stashed changes
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -23,7 +32,7 @@ grow_vertical = 2
 texture = ExtResource("2_cayip")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -49,24 +58,28 @@ layout_mode = 2
 [node name="HSeparator2" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+theme_override_constants/separation = 32
 
-[node name="HSeparator3" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.64705884, 0.4509804, 0.22745098, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_wwsa2")
+theme_override_font_sizes/font_size = 64
+text = "tupa"
+
+[node name="HSeparator6" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-
-[node name="HSeparator4" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-
-[node name="HSeparator5" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_158mb")
 text = "Play"
 flat = true
+alignment = 0
 
 [node name="HSeparator" type="HSeparator" parent="HBoxContainer/VBoxContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -77,6 +90,7 @@ layout_mode = 2
 theme = ExtResource("3_158mb")
 text = "Credits"
 flat = true
+alignment = 0
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
