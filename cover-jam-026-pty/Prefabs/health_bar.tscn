@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://dascp6gsufkdq"]
+
+[ext_resource type="Texture2D" uid="uid://blmxdan8c5jxa" path="res://Assets/MC_Head.png" id="1_w3g03"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq6q6"]
+bg_color = Color(0.32, 0.22293335, 0.112, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.1764706, 0.12156863, 0.0627451, 1)
+expand_margin_left = 1.0
+expand_margin_top = 1.0
+expand_margin_right = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8ndr"]
+bg_color = Color(0.84, 0.51072, 0.13440003, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg3n6"]
+atlas = ExtResource("1_w3g03")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxc54"]
+atlas = ExtResource("1_w3g03")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfmrm"]
+atlas = ExtResource("1_w3g03")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xjuh1"]
+atlas = ExtResource("1_w3g03")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1o5eq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg3n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxc54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfmrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xjuh1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="health_bar" type="ProgressBar"]
+offset_right = 100.0
+offset_bottom = 5.0
+scale = Vector2(2, 2)
+theme_override_styles/background = SubResource("StyleBoxFlat_cq6q6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_u8ndr")
+value = 50.0
+show_percentage = false
+
+[node name="headMove" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 6)
+sprite_frames = SubResource("SpriteFrames_1o5eq")
+autoplay = "default"
+frame_progress = 0.50443727
