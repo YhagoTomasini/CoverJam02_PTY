@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://dme32dp4asol8"]
 
-[ext_resource type="PackedScene" path="res://Prefabs/xp.tscn" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://biy5a2sgl1041" path="res://Prefabs/xp.tscn" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://br0ibc0cms7wf" path="res://Prefabs/Player.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" path="res://Prefabs/enemy.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bxw6r1sye8gs" path="res://Scenes/pause.tscn" id="4_jjvhh"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_7u77a"]

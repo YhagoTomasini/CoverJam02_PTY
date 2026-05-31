@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sunpe"]
 size = Vector2(32, 32)
 
-[node name="Range" type="Area2D"]
+[node name="Sword" type="Area2D"]
 script = ExtResource("1_42m38")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -17,3 +17,5 @@ shape = SubResource("RectangleShape2D_sunpe")
 modulate = Color(0, 1, 0, 1)
 scale = Vector2(2, 0.5)
 texture = ExtResource("2_7k45y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

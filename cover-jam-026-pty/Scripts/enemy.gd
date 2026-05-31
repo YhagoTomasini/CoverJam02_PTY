@@ -14,5 +14,13 @@ func _physics_process(_delta: float) -> void:
 	var direction := position.direction_to(player.position)
 	velocity = direction * speed
 	# print(position.direction_to(player.position))
-
 	move_and_slide()
+
+func receive_damage(damage_value: float):
+	if health > damage_value:
+		health -= damage_value
+	else:
+		deatch()
+
+func deatch():
+	queue_free()
