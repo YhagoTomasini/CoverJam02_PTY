@@ -9,8 +9,6 @@ extends CharacterBody2D
 
 const XP = preload("uid://biy5a2sgl1041")
 
-
-
 var player : CharacterBody2D
 
 func _ready() -> void:

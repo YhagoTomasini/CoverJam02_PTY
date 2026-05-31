@@ -4,8 +4,6 @@ var xp = 10
 var is_name = "xp"
 @onready var collision: CollisionShape2D = $collision
 
-
-
 func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	collision.disabled = false
