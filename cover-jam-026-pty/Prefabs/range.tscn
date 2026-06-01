@@ -58,6 +58,7 @@ animations = [{
 }]
 
 [node name="Sword" type="Area2D" node_paths=PackedStringArray("animate")]
+scale = Vector2(2, 2)
 script = ExtResource("1_42m38")
 animate = NodePath("AnimatedSprite2D")
 

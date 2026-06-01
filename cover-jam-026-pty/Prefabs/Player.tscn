@@ -224,7 +224,7 @@ arraysDeEnemys = Array[PackedScene]([ExtResource("8_3ygst"), ExtResource("8_t8lm
 position = Vector2(600, 0)
 
 [node name="Timer" type="Timer" parent="PivotSpawn"]
-wait_time = 2.6
+wait_time = 2.0
 
 [node name="Timer_sword" type="Timer" parent="."]
 wait_time = 1.2

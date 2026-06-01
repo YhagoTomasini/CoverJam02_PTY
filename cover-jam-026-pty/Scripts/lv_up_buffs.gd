@@ -31,12 +31,12 @@ var Size_icon = preload("res://Assets/buffs_size.png")
 var Size_text = "TAMANHO"
 
 
-var speed = [speed_icon, speed_text,0.3]
-var health = [health_icon, health_text,0.3]
-var xp = [xp_icon, xp_text, 0.3]
-var dano = [dano_icon,dano_text, 0.3]
-var CD = [CD_icon, CD_text, 0.3]
-var Size = [Size_icon, Size_text, 0.3]
+var speed = [speed_icon, speed_text,0.5]
+var health = [health_icon, health_text,0.5]
+var xp = [xp_icon, xp_text, 0.5]
+var dano = [dano_icon,dano_text, 0.35]
+var CD = [CD_icon, CD_text, 0.5]
+var Size = [Size_icon, Size_text, 0.35]
 
 var arrayDeArmas =[speed,health,xp,dano,CD,Size] 
 
