@@ -29,8 +29,6 @@ var level = 0
 
 
 
-
-
 func _ready() -> void:
 	#timer_sword.start()
 	#imer_fire.start()
@@ -72,9 +70,11 @@ func Damage(damage_value: float):
 		main.gameover()
 	
 func _physics_process(_delta: float) -> void:
+	health_bar.value = health
+	
 	# Movimentação do jogador
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	health_bar.value = health
+	
 	if direction:
 		velocity = direction * speed
 		Pivot.rotation = direction.angle()
@@ -119,14 +119,14 @@ func _on_timer_sword_timeout() -> void:
 	timer_sword.start()
 
 func _on_timer_fire_timeout() -> void:
-	var attack_instance = attack_pistol.instantiate()
-	attack_instance.global_position = attack_Postion.global_position
-	attack_instance.global_rotation = Pivot.global_rotation
-	get_parent().add_child(attack_instance)
-	timer_fire.start()
+	if Global.enemys:
+		var attack_instance = attack_pistol.instantiate()
+		attack_instance.global_position = attack_Postion.global_position
+		attack_instance.global_rotation = Pivot.global_rotation
+		get_parent().add_child(attack_instance)
+		timer_fire.start()
 
 
 func _on_timer_wave_timeout() -> void:
 	if (timer_spawn.wait_time >= 0.2):
 		timer_spawn.wait_time = timer_spawn.wait_time - 0.2
-	pass # Replace with function body.

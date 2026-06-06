@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://boy6cbo0ikvxb"]
 
 [ext_resource type="Script" uid="uid://n7j36usxhy6g" path="res://Scripts/lv_up_buffs.gd" id="1_mpapi"]
-[ext_resource type="Shader" path="res://Temas/blur.gdshader" id="2_oygp4"]
+[ext_resource type="Shader" uid="uid://bnpxslx2stemd" path="res://Temas/blur.gdshader" id="2_oygp4"]
 [ext_resource type="Texture2D" uid="uid://5ar438lwiubv" path="res://Assets/moldura_upgrades.png" id="3_ewgkc"]
 [ext_resource type="Texture2D" uid="uid://dxpm7p8nk0og2" path="res://Assets/pistol.png" id="4_ntg6w"]
 
@@ -13,7 +13,6 @@ shader_parameter/blur_amount = 8.0
 
 [node name="lv_up_buff" type="Control" node_paths=PackedStringArray("button", "button_2", "button_3", "icon_1", "icon_2", "icon_3", "text_1", "text_2", "text_3")]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

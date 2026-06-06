@@ -46,8 +46,8 @@ var powerUp2
 var powerUp3
 
 
-#func _ready() -> void:
-	##button.grab_focus()
+func _ready() -> void:
+	visible = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_page_down"):
@@ -59,6 +59,7 @@ func _process(_delta: float) -> void:
 func LeveUp():
 	visible = true
 	get_tree().paused = true
+		
 	powerUp1 = arrayDeArmas.pick_random()
 	powerUp2 = arrayDeArmas.pick_random()
 	powerUp3 = arrayDeArmas.pick_random()
@@ -120,6 +121,8 @@ func LeveUp():
 		Size:
 			text_3.text = Size[1]
 			icon_3.texture = Size[0]
+		
+	button.grab_focus()
 
 func _on_button_pressed() -> void:
 	match powerUp1:

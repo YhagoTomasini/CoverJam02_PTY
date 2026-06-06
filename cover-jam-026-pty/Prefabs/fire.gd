@@ -13,4 +13,3 @@ func _on_range_fire_body_exited(body: Node2D) -> void:
 func _on_timer_timeout() -> void:
 	collision.disabled = true
 	collision.disabled = false
-	pass # Replace with function body.

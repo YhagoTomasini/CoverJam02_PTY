@@ -18,7 +18,6 @@ func _process(_delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	spawn()
-	pass # Replace with function body.
 
 func spawn():
 	var escolido = arraysDeEnemys.pick_random()
@@ -26,4 +25,3 @@ func spawn():
 	pivotSpaw.global_rotation = randf_range(0,360)
 	enemy_instance.global_position = markerAttack.global_position
 	get_parent().get_parent().add_child(enemy_instance)
-	pass

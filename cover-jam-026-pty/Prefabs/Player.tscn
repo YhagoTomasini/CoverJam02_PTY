@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="8_3ygst"]
 [ext_resource type="PackedScene" uid="uid://djwg6cxnyae7i" path="res://Prefabs/enemy2.tscn" id="8_t8lmw"]
 [ext_resource type="PackedScene" uid="uid://dcaprr75qoiwl" path="res://Prefabs/enemy3.tscn" id="9_k2qb3"]
-[ext_resource type="Script" uid="uid://dk5xcobr6150d" path="res://Prefabs/fire.gd" id="9_lhekp"]
+[ext_resource type="Script" path="res://Prefabs/fire.gd" id="9_lhekp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e80uo"]
 size = Vector2(32, 32)
@@ -165,7 +165,7 @@ animations = [{
 size = Vector2(34, 34)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ygst"]
-radius = 188.00266
+radius = 223.00224
 
 [node name="CharacterBody2D" type="CharacterBody2D" node_paths=PackedStringArray("anim_body", "anim_head") groups=["Player"]]
 collision_layer = 3

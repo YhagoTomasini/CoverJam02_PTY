@@ -50,8 +50,8 @@ var powerUp3
 
 
 func _ready() -> void:
-	button.grab_focus()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	visible = false
+	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_page_down"):
 		visible = false
@@ -62,6 +62,7 @@ func _process(_delta: float) -> void:
 func LeveUp():
 	visible = true
 	get_tree().paused = true
+	
 	powerUp1 = arrayDeArmas.pick_random()
 	powerUp2 = arrayDeArmas.pick_random()
 	powerUp3 = arrayDeArmas.pick_random()
@@ -131,6 +132,8 @@ func LeveUp():
 		mapinguari:
 			text_3.text = mapinguari[1]
 			icon_3.texture = mapinguari[0]
+	
+	button.grab_focus()
 
 func _on_button_pressed() -> void:
 	match powerUp1:
