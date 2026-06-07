@@ -1,25 +1,25 @@
 [gd_scene load_steps=9 format=3 uid="uid://djwg6cxnyae7i"]
 
-[ext_resource type="Script" uid="uid://djwlgr8uux1my" path="res://Scripts/enemy.gd" id="1_ky4g8"]
-[ext_resource type="Texture2D" uid="uid://dbf4yndog387" path="res://Assets/Gamuto.png" id="2_sb3na"]
+[ext_resource type="Script" uid="uid://ckx4ijbvs2c8p" path="res://Scripts/capivara.gd" id="1_w5rgm"]
+[ext_resource type="Texture2D" uid="uid://dbf4yndog387" path="res://Assets/Gamuto.png" id="2_n76wr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ky4g8"]
-atlas = ExtResource("2_sb3na")
+atlas = ExtResource("2_n76wr")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jbua2"]
-atlas = ExtResource("2_sb3na")
+atlas = ExtResource("2_n76wr")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y3c0p"]
-atlas = ExtResource("2_sb3na")
+atlas = ExtResource("2_n76wr")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ioghj"]
-atlas = ExtResource("2_sb3na")
+atlas = ExtResource("2_n76wr")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g7nnu"]
@@ -42,13 +42,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("animation") groups=["Enemy"]]
-script = ExtResource("1_ky4g8")
-is_name = "Enemy2"
-speed = 160.0
-health = 10
+[node name="Morcego" type="CharacterBody2D" node_paths=PackedStringArray("animation") groups=["Enemy"]]
+script = ExtResource("1_w5rgm")
+speed = 180.0
+max_health = 10
 damage = 10
 animation = NodePath("AnimatedSprite2D")
+attack = true
+cooldownAttack = 0.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_4gyqm")

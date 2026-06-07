@@ -62,6 +62,12 @@ func check_xp():
 			lv_up_buff.LeveUp()
 		print("Level UP:", Global.lv_atual)
 		
+func receive_damage(damage_value: float):
+	if (health > damage_value):
+		health -= damage_value
+	else:
+		main.gameover()
+		
 func Damage(damage_value: float):
 	if (health >= damage_value):
 		health -= damage_value
@@ -107,9 +113,6 @@ func _input(event: InputEvent) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Xp"):
 		print("XP")
-	if body.is_in_group("Enemy"):
-		body.slow()
-		Damage(body.damage)
 
 func _on_timer_sword_timeout() -> void:
 	var attack_instance = attack_sword.instantiate()
