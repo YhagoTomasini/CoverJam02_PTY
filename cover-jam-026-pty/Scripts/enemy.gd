@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var animation : AnimatedSprite2D
 
 const XP = preload("res://Prefabs/xp.tscn")
+const BLOOD = preload("res://Prefabs/sangue.tscn")
 
 var player : CharacterBody2D
 
@@ -41,4 +42,9 @@ func slow():
 	speed = speed_atual
 
 func deatch():
+	var blood_instance = BLOOD.instantiate()
+	get_tree().current_scene.add_child(blood_instance)
+	blood_instance.global_position = global_position
+	blood_instance.rotation = global_position.angle_to_point(-player.global_position)
+	
 	queue_free()

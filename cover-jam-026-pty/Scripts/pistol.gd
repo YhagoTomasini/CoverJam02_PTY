@@ -1,6 +1,5 @@
 extends Area2D
 
-var cooldown = 1 * Global.Multiple_CD
 var Multiple_size = 1 * Global.Multiple_size
 var direction
 var speed = 2
@@ -15,7 +14,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
-		body.receive_damage(5)
+		body.receive_damage(5 * Global.Multiple_Damage)
 		queue_free()
 	if body.is_in_group("Wall"):
 		queue_free()

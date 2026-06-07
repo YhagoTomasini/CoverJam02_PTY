@@ -1,6 +1,6 @@
 extends Area2D
 
-var xp = 10
+var xp = 10 + Global.Multiple_xp
 var is_name = "xp"
 @onready var collision: CollisionShape2D = $collision
 
@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body.is_in_group("Player")):
-		Global.xp += 10
+		Global.xp += xp
 		body.check_xp()
 		queue_free()
 	pass

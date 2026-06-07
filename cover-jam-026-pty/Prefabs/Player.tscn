@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://br0ibc0cms7wf"]
+[gd_scene load_steps=37 format=3 uid="uid://br0ibc0cms7wf"]
 
 [ext_resource type="Script" uid="uid://mwsctqlv5kg" path="res://Scripts/player.gd" id="1_kpjcp"]
 [ext_resource type="PackedScene" uid="uid://qk5wtcg5ijhk" path="res://Prefabs/range.tscn" id="2_t8lmw"]
@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://btjs1kw6uvpn2" path="res://Prefabs/enemy.tscn" id="8_3ygst"]
 [ext_resource type="PackedScene" uid="uid://djwg6cxnyae7i" path="res://Prefabs/enemy2.tscn" id="8_t8lmw"]
 [ext_resource type="PackedScene" uid="uid://dcaprr75qoiwl" path="res://Prefabs/enemy3.tscn" id="9_k2qb3"]
-[ext_resource type="Script" path="res://Prefabs/fire.gd" id="9_lhekp"]
+[ext_resource type="Script" uid="uid://dk5xcobr6150d" path="res://Scripts/fire.gd" id="9_lhekp"]
+[ext_resource type="Script" uid="uid://dnrbmn7tk7364" path="res://Scripts/timer_sword.gd" id="12_t7w7j"]
+[ext_resource type="Script" uid="uid://bjaxtsqlo5yge" path="res://Scripts/timer_fire.gd" id="13_08l6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e80uo"]
 size = Vector2(32, 32)
@@ -228,9 +230,11 @@ wait_time = 2.0
 
 [node name="Timer_sword" type="Timer" parent="."]
 wait_time = 1.2
+script = ExtResource("12_t7w7j")
 
 [node name="Timer_fire" type="Timer" parent="."]
 wait_time = 0.8
+script = ExtResource("13_08l6w")
 
 [node name="Fire" type="Node2D" parent="."]
 script = ExtResource("9_lhekp")

@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://2mklnkcrqkyl"]
+
+[ext_resource type="Script" uid="uid://cwognh8gv4i51" path="res://Globals/data.gd" id="1_ylaa1"]
+
+[node name="data" type="Control" node_paths=PackedStringArray("vida", "vidaMax", "danoF", "danoP", "alcance", "cd", "multiXp")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ylaa1")
+vida = NodePath("CanvasLayer/VBoxContainer/vida")
+vidaMax = NodePath("CanvasLayer/VBoxContainer/vidaMax")
+danoF = NodePath("CanvasLayer/VBoxContainer/danoF")
+danoP = NodePath("CanvasLayer/VBoxContainer/danoP")
+alcance = NodePath("CanvasLayer/VBoxContainer/range")
+cd = NodePath("CanvasLayer/VBoxContainer/cd")
+multiXp = NodePath("CanvasLayer/VBoxContainer/MultiXP")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 0.5372549)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -150.0
+offset_right = 158.0
+offset_bottom = -16.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -137.0
+offset_right = 219.0
+grow_vertical = 0
+
+[node name="vida" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "vida"
+
+[node name="vidaMax" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "vidaMax"
+
+[node name="danoF" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "dano"
+
+[node name="danoP" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "dano"
+
+[node name="range" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "range"
+
+[node name="cd" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "range"
+
+[node name="MultiXP" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "MultiXP"

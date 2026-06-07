@@ -14,4 +14,4 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
-		body.receive_damage(10)
+		body.receive_damage(10*Global.Multiple_Damage)

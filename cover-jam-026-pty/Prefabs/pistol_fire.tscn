@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dbgla2xv2oblv"]
 
-[ext_resource type="Script" uid="uid://b5aggn51ykmv3" path="res://Prefabs/pistol.gd" id="1_lpdot"]
+[ext_resource type="Script" uid="uid://b5aggn51ykmv3" path="res://Scripts/pistol.gd" id="1_lpdot"]
 
 [sub_resource type="Curve" id="Curve_f7nhj"]
 _limits = [0.0, 16.0, 0.0, 1.0]
