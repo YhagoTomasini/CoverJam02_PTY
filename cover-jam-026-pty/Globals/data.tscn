@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwognh8gv4i51" path="res://Globals/data.gd" id="1_ylaa1"]
 
-[node name="data" type="Control" node_paths=PackedStringArray("vida", "vidaMax", "danoF", "danoP", "alcance", "cd", "multiXp")]
+[node name="data" type="Control" node_paths=PackedStringArray("vida", "vidaMax", "velo", "danoF", "danoP", "alcance", "cd", "multiXp")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_ylaa1")
 vida = NodePath("CanvasLayer/VBoxContainer/vida")
 vidaMax = NodePath("CanvasLayer/VBoxContainer/vidaMax")
+velo = NodePath("CanvasLayer/VBoxContainer/velo")
 danoF = NodePath("CanvasLayer/VBoxContainer/danoF")
 danoP = NodePath("CanvasLayer/VBoxContainer/danoP")
 alcance = NodePath("CanvasLayer/VBoxContainer/range")
@@ -46,6 +47,11 @@ theme_override_font_sizes/font_size = 8
 text = "vida"
 
 [node name="vidaMax" type="Label" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "vidaMax"
+
+[node name="velo" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 8
 text = "vidaMax"

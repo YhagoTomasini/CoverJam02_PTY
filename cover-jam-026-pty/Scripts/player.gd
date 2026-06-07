@@ -41,6 +41,8 @@ func set_Health(health_value):
 		health += health_value
 	print(health)
 	
+	Global.vida_atual = health
+	
 func equipar_arma(arma):
 	if arma == "pistola":
 		timer_fire.start()
@@ -71,13 +73,15 @@ func receive_damage(damage_value: float):
 func Damage(damage_value: float):
 	if (health >= damage_value):
 		health -= damage_value
+		
+		Global.vida_atual = health
 		print("Voce tomou: ",damage_value," dano")
 	else:
 		main.gameover()
 	
 func _physics_process(_delta: float) -> void:
 	health_bar.value = health
-	
+	health_bar.max_value = max_health * Global.Multiple_Health
 	# Movimentação do jogador
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
