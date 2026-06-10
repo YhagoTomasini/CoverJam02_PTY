@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://btjs1kw6uvpn2"]
 
-[ext_resource type="Script" uid="uid://b5pj3fi7res4h" path="res://Scripts/morcego.gd" id="1_i5rl0"]
+[ext_resource type="Script" uid="uid://b5pj3fi7res4h" path="res://Scripts/Enemys/morcego.gd" id="1_i5rl0"]
 [ext_resource type="Texture2D" uid="uid://rsanjb764x6a" path="res://Assets/Inim_Capi_run.png" id="2_atjom"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
@@ -43,6 +43,8 @@ animations = [{
 }]
 
 [node name="Capivara" type="CharacterBody2D" node_paths=PackedStringArray("animation") groups=["Enemy"]]
+motion_mode = 1
+platform_on_leave = 2
 script = ExtResource("1_i5rl0")
 speed = 80.0
 max_health = 25

@@ -30,8 +30,6 @@ var level = 0
 
 
 func _ready() -> void:
-	#timer_sword.start()
-	#imer_fire.start()
 	pass
 
 func set_Health(health_value):

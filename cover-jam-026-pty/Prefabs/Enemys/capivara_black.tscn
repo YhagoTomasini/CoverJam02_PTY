@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bwhjx3xw6ryj7"]
 
-[ext_resource type="Script" uid="uid://c34cv757v5ld" path="res://Scripts/capivara_black.gd" id="1_18egl"]
+[ext_resource type="Script" uid="uid://c34cv757v5ld" path="res://Scripts/Enemys/capivara_black.gd" id="1_18egl"]
 [ext_resource type="Texture2D" uid="uid://rsanjb764x6a" path="res://Assets/Inim_Capi_run.png" id="2_sq8qj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
@@ -43,6 +43,8 @@ animations = [{
 }]
 
 [node name="Capivara_Black" type="CharacterBody2D" node_paths=PackedStringArray("animation") groups=["Enemy"]]
+motion_mode = 1
+platform_on_leave = 2
 script = ExtResource("1_18egl")
 speed = 64.0
 max_health = 36

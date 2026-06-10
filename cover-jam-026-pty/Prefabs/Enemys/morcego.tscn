@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://djwg6cxnyae7i"]
 
-[ext_resource type="Script" uid="uid://ckx4ijbvs2c8p" path="res://Scripts/capivara.gd" id="1_w5rgm"]
+[ext_resource type="Script" uid="uid://ckx4ijbvs2c8p" path="res://Scripts/Enemys/capivara.gd" id="1_w5rgm"]
 [ext_resource type="Texture2D" uid="uid://dbf4yndog387" path="res://Assets/Gamuto.png" id="2_n76wr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
@@ -43,6 +43,8 @@ animations = [{
 }]
 
 [node name="Morcego" type="CharacterBody2D" node_paths=PackedStringArray("animation") groups=["Enemy"]]
+motion_mode = 1
+platform_on_leave = 2
 script = ExtResource("1_w5rgm")
 speed = 180.0
 max_health = 10
